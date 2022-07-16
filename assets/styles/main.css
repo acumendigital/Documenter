@@ -1,0 +1,28 @@
+* {
+ font-family: 'Google Sans', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-style: none;
+  border: none;
+}
+body{
+  width: 100%;
+  font-style: normal;
+  color: #51545C;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+i,
+a,
+button {
+  cursor: pointer;
+}
