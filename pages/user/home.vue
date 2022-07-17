@@ -239,7 +239,7 @@ export default {
 }
 .topicTwo,
 .topicThree {
-  margin: 64px 0 32px 16px;
+  margin: 64px 0 32px 0px;
   border-radius: 8px;
   /* padding: 24px 44px 34px 40px; */
   width: 868px;
