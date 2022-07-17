@@ -15,6 +15,7 @@ export default {
 
 <style lang="scss">
     .search-bar-container{
+        margin-left: 56px;
         padding-top: 40px;
         padding-bottom: 65px;
         .search-bar{
