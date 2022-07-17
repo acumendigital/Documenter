@@ -34,7 +34,7 @@ export default {
         }
         .main-content{
             width: 100%;
-            padding: 0px 56px;
+            // padding: 0px 56px;
             height: 100vh;
              background: #fff;
         }

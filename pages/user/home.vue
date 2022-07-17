@@ -20,6 +20,9 @@
         <Introduction :header="header" :content="content2" :link="link" />
       </div>
     </div>
+     <div class="line">
+    </div>
+
 
     <div class="introductionTwo">
       <div class="sub-header">
@@ -62,6 +65,8 @@
           </li>
         </ol>
       </div>
+    </div>
+     <div class="line">
     </div>
 
     <div class="topic">
@@ -173,8 +178,7 @@ export default {
 }
 .introduction {
   padding: 0px 0px 64px 0px;
-  border-bottom: 1px solid #efefef;
-  border-bottom: 1px solid #000;
+  margin-left: 56px;
 }
 .header h2 {
   font-weight: 700;
@@ -196,7 +200,7 @@ export default {
 .introductionTwo {
    margin: 64px 0 0px 0px;
   /* padding: 24px 0 0px; */
-  border-bottom: 1px solid #efefef;
+   margin-left: 56px;
 }
 .sub-header h2 {
   font-weight: 700;
@@ -230,12 +234,16 @@ export default {
 .introductionFour ol {
   margin-bottom: 64px;
 }
+.line{
+   border-top: 1px solid #efefef;
+}
 .topic {
-  margin: 64px 0 32px 0px;
-  border: 1px solid #efefef;
+  margin-top: 64px;
+ border: 1px solid #efefef;
   border-radius: 8px;
-  padding: 24px 44px 34px 0px;
+  padding: 24px 44px 34px 40px;
   width: 868px;
+   margin-left: 16px;
 }
 .topicTwo,
 .topicThree {
@@ -243,6 +251,7 @@ export default {
   border-radius: 8px;
   /* padding: 24px 44px 34px 40px; */
   width: 868px;
+   margin-left: 56px;
 }
 .subTopic h2 {
   font-weight: 700;

@@ -56,7 +56,7 @@ export default {
   color: #8d9091;
 }
 .link {
-  margin: 0px 0 0 0;
+  margin: 16px 0 0 0;
 }
 .link a {
   font-weight: 400;
