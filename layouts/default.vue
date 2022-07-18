@@ -30,16 +30,19 @@ export default {
             width: 270px;
             border-right: 1px solid #CCCCCC;
             height: 100vh;
+             background: #fff;
         }
         .main-content{
             width: 100%;
-            padding: 0px 56px;
+            // padding: 0px 56px;
             height: 100vh;
+             background: #fff;
         }
         .sidebar-right-layout{
             width: 270px;
             border-left: 1px solid #CCCCCC;
             height: 100vh;
+             background: #fff;
         }
     }
 </style>
