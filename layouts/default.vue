@@ -35,6 +35,8 @@ export default {
             width: 100%;
             padding: 0px 56px;
             height: 100vh;
+            overflow-y: auto;
+            overflow-x: none;
         }
         .sidebar-right-layout{
             width: 270px;
