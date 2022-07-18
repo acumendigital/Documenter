@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
     .user-layout-container{
         @include flex-center;
+        font-family: 'HankenSans Regular';
         .sidebar-left-layout{
             width: 270px;
             border-right: 1px solid #CCCCCC;
