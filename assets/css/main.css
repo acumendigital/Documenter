@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "HankenSans Regular";
+    src: url("../fonts/HankenSans-Regular.otf");
+    src: url("../fonts/HankenSans-Regular.otf") format("embedded-opentype"),
+      url("../fonts/HankenSans-Regular.otf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "HankenSans Black";
+    src: url("../fonts/HankenSans-Black.otf");
+    src: url("../fonts/HankenSans-Black.otf") format("embedded-opentype"),
+      url("../fonts/HankenSans-Black.otf") format("truetype");
+  }
+  @font-face {
+    font-family: "HankenSans Bold";
+    src: url("../fonts/HankenSans-Bold.otf");
+    src: url("../fonts/HankenSans-Bold.otf") format("embedded-opentype"),
+      url("../fonts/HankenSans-Bold.otf") format("truetype");
+  }
+  @font-face {
+    font-family: "HankenSans Italic";
+    src: url("../fonts/HankenSans-Italic.otf");
+    src: url("../fonts/HankenSans-Italic.otf") format("embedded-opentype"),
+      url("../fonts/HankenSans-Italic.otf") format("truetype");
+  }
+  @font-face {
+    font-family: "HankenSans Light";
+    src: url("../fonts/HankenSans-Light.otf");
+    src: url("../fonts/HankenSans-Light.otf") format("embedded-opentype"),
+      url("../fonts/HankenSans-Light.otf") format("truetype");
+  }
+  @font-face {
+    font-family: "HankenSans Medium";
+    src: url("../fonts/HankenSans-Medium.otf");
+    src: url("../fonts/HankenSans-Medium.otf") format("embedded-opentype"),
+      url("../fonts/HankenSans-Medium.otf") format("truetype");
+  }

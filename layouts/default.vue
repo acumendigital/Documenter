@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
     .user-layout-container{
         @include flex-center;
+        font-family: 'HankenSans Regular';
         .sidebar-left-layout{
             width: 270px;
             border-right: 1px solid #CCCCCC;
@@ -36,7 +37,8 @@ export default {
             width: 100%;
             // padding: 0px 56px;
             height: 100vh;
-             background: #fff;
+            overflow-y: auto;
+            overflow-x: none;
         }
         .sidebar-right-layout{
             width: 270px;
