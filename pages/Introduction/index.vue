@@ -20,9 +20,6 @@
         <Introduction :header="header" :content="content2" :link="link" />
       </div>
     </div>
-     <div class="line">
-    </div>
-
 
     <div class="introductionTwo">
       <div class="sub-header">
@@ -66,9 +63,6 @@
         </ol>
       </div>
     </div>
-     <div class="line">
-    </div>
-
     <div class="topic">
       <div class="subTopic">
         <h2>Sub Topic</h2>
@@ -150,10 +144,7 @@
 </template>
 
 <script>
-import userLayout from '~/layouts/user-layout.vue'
-
 export default {
-  layout: 'userLayout',
   name: 'IndexPage',
   data() {
     return {
@@ -167,18 +158,16 @@ export default {
   },
 }
 </script>
-
 <style scoped>
 .container {
   width: 90%;
-  /* margin: 20px auto; */
+  margin: 20px auto;
   max-width: 900px;
-  /* background: green; */
-  background: #fff;
+  background: green;
 }
 .introduction {
-  padding: 0px 0px 64px 0px;
-  margin-left: 56px;
+  padding: 24px 44px 34px 40px;
+  border-bottom: 1px solid #efefef;
 }
 .header h2 {
   font-weight: 700;
@@ -198,9 +187,8 @@ export default {
   margin-right: 48px;
 }
 .introductionTwo {
-   margin: 64px 0 0px 0px;
-  /* padding: 24px 0 0px; */
-   margin-left: 56px;
+  padding: 24px 44px 34px 40px;
+  border-bottom: 1px solid #efefef;
 }
 .sub-header h2 {
   font-weight: 700;
@@ -213,7 +201,7 @@ export default {
   font-size: 14px;
   line-height: 24px;
   width: 713px;
-  padding: 0px 0 32px 0;
+  padding: 16px 0 32px 0;
 }
 .introductionThree h3,
 .introductionFour h3 {
@@ -234,24 +222,19 @@ export default {
 .introductionFour ol {
   margin-bottom: 64px;
 }
-.line{
-   border-top: 1px solid #efefef;
-}
 .topic {
-  margin-top: 64px;
- border: 1px solid #efefef;
+  margin: 64px 0 32px 16px;
+  border: 1px solid #efefef;
   border-radius: 8px;
   padding: 24px 44px 34px 40px;
   width: 868px;
-   margin-left: 16px;
 }
 .topicTwo,
 .topicThree {
-  margin: 64px 0 32px 0px;
+  margin: 64px 0 32px 16px;
   border-radius: 8px;
-  /* padding: 24px 44px 34px 40px; */
+  padding: 24px 44px 34px 40px;
   width: 868px;
-   margin-left: 56px;
 }
 .subTopic h2 {
   font-weight: 700;
