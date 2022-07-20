@@ -31,7 +31,8 @@ export default {
             width: 270px;
             border-right: 1px solid #CCCCCC;
             height: 100vh;
-             background: #fff;
+            overflow-y: auto;
+            overflow-x: none;
         }
         .main-content{
             width: 100%;
