@@ -8,7 +8,7 @@
         </div>
         <div class="code-block">
             <div class="code-block-img">
-                <img src="~/assets/images/syntax-highlighter.png" alt="Code block">
+                <img src="~/assets/images/syntax.svg" alt="Code block">
             </div>
         </div>
     </div>
