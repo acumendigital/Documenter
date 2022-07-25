@@ -20,9 +20,7 @@
         <Introduction :header="header" :content="content2" :link="link" />
       </div>
     </div>
-     <div class="line">
-    </div>
-
+    <div class="line"></div>
 
     <div class="introductionTwo">
       <div class="sub-header">
@@ -66,8 +64,7 @@
         </ol>
       </div>
     </div>
-     <div class="line">
-    </div>
+    <div class="line"></div>
 
     <div class="topic">
       <div class="subTopic">
@@ -146,6 +143,213 @@
         </p>
       </div>
     </div>
+    <div class="statusTable">
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Status</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to Kant, knowledge about space is synthetic, in that statements about space are not simply true by virtue of the meaning of the words in the statement. In his work, Kant</td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+          </tr>
+        </table>
+      </div>
+
+      <ul class="statusList">
+        <li>statements about space are not simply true by</li>
+        <li>
+          In the eighteenth century the German philosopher Immanuel Kant
+          developed a theory
+        </li>
+        <li>According to Kant, knowledge about space is synthetic, in that</li>
+      </ul>
+    </div>
+    <div class="tabs"></div>
+    <div class="code">
+      <img src="~/assets/images/syntax.svg" />
+      <img src="~/assets/images/syntax2.svg" />
+    </div>
+    <div class="line"></div>
+    <div class="response">
+      <img src="~/assets/images/syntax.svg" />
+    </div>
+    <div class="line"></div>
+    <div class="bulb">
+      <div>
+        <h2>Introduction</h2>
+        <p>
+          In the eighteenth century the German philosopher Immanuel Kant
+          developed a theory of knowledge in which knowledge about space can be
+          both a priori and synthetic. According to Kant, knowledge about space
+          is synthetic, in that statements about space are not simply true by
+          virtue of the meaning of the words in the statement. In his work, Kant
+          rejected the view that space must be either a substance or relation.
+          Instead he came to the conclusion that space and time are not
+          discovered by humans to be objective features of the world, but
+          imposed by us as part of a framework for organizing experience.
+        </p>
+      </div>
+      <div>
+        <img src="~/assets/images/bulb.svg" />
+      </div>
+    </div>
+
+    <div class="table">
+      <h2>Table</h2>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th></th>
+            <th>Android SDK</th>
+            <th>Ios SDK</th>
+            <th>React</th>
+            <th>Javascript</th>
+            <th>React native SDK</th>
+          </tr>
+          <tr>
+            <td>Available Country</td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+          <tr>
+            <td>Support for bluetooth</td>
+            <td><img src="~/assets/images/fail.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/fail.svg" /></td>
+            <td><img src="~/assets/images/fail.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+          <tr>
+            <td>Support for smart readers</td>
+            <td>Us only</td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/fail.svg" /></td>
+            <td><img src="~/assets/images/fail.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td>Us only</td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+            <td><img src="~/assets/images/tick.svg" /></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="basics">
+      <h2>Learn more abount Basics</h2>
+      <div class="basicsCrads">
+        <Basics :title="title" />
+        <Basics :title="title" />
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="intro">
+      <h2>Introduction</h2>
+      <p>
+        In the eighteenth century the German philosopher Immanuel Kant developed
+        a theory of knowledge in which knowledge about space can be both a
+        priori and synthetic. According to Kant, knowledge about space is
+        synthetic, in that statements about space are not simply true by virtue
+        of the meaning of the words in the statement. In his work, Kant
+      </p>
+      <div class="notesCards">
+        <Notes :header="introduction" :content="notes" />
+        <Notes :header="introduction" :content="notes" />
+        <Notes :header="introduction" :content="notes" />
+      </div>
+    </div>
+    <div class="introNote">
+      <img src="~/assets/images/alarm.svg" />
+      <p>
+        NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis
+        praesentium voluptatum deleniti atque corrupti quos dolores et quas
+        molestias excepturi sint
+      </p>
+    </div>
+    <div class="controls">
+      <div
+        class="card"
+        @click="
+          clicked = true
+          $router.push('#')
+        "
+      >
+        <img src="~/assets/images/left.svg" />
+        <div>
+          <p class="previous">Previous</p>
+          <p class="basic">Basics</p>
+        </div>
+      </div>
+      <div
+        class="card"
+        @click="
+          clicked = true
+          $router.push('#')
+        "
+      >
+        <div>
+          <p class="previous">Next</p>
+          <p class="basic">Control</p>
+        </div>
+        <img src="~/assets/images/right.svg" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -163,6 +367,10 @@ export default {
         'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
       content2:
         'In the eighteenth century the German philosopher Immanuel Kant developed a ',
+      introduction: 'Introduction',
+      notes:
+        'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
+      title: 'Basics',
     }
   },
 }
@@ -198,9 +406,8 @@ export default {
   margin-right: 48px;
 }
 .introductionTwo {
-   margin: 64px 0 0px 0px;
-  /* padding: 24px 0 0px; */
-   margin-left: 56px;
+  margin: 64px 0 0px 0px;
+  margin-left: 56px;
 }
 .sub-header h2 {
   font-weight: 700;
@@ -230,20 +437,26 @@ export default {
 }
 .introductionThree ul {
   margin-bottom: 32px;
+  padding: 0;
+   padding-left: 20px;
 }
 .introductionFour ol {
   margin-bottom: 64px;
+   padding-left: 15px;
 }
-.line{
-   border-top: 1px solid #efefef;
+ol li{
+  padding-left: 5px;
+}
+.line {
+  border-top: 1px solid #efefef;
 }
 .topic {
   margin-top: 64px;
- border: 1px solid #efefef;
+  border: 1px solid #efefef;
   border-radius: 8px;
   padding: 24px 44px 34px 40px;
   width: 868px;
-   margin-left: 16px;
+  margin-left: 16px;
 }
 .topicTwo,
 .topicThree {
@@ -251,7 +464,7 @@ export default {
   border-radius: 8px;
   /* padding: 24px 44px 34px 40px; */
   width: 868px;
-   margin-left: 56px;
+  margin-left: 56px;
 }
 .subTopic h2 {
   font-weight: 700;
@@ -328,5 +541,189 @@ export default {
 }
 .subTopicThree img {
   margin-bottom: 32px;
+}
+.code {
+  background: #fbfbfb;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  margin-left: 56px;
+  width: 788px;
+  padding: 72px 29px 0 24px;
+  margin-bottom: 64px;
+}
+.code img {
+  margin-bottom: 24px;
+}
+.response {
+  background: #fbfbfb;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  margin-left: 56px;
+  width: 788px;
+  padding: 72px 29px 24px 24px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+.bulb {
+  margin: 64px 0 64px 56px;
+}
+.bulb h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #071439;
+}
+.bulb p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #51545c;
+}
+.table {
+  margin: 64px 0 64px 56px;
+}
+.table h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #071439;
+}
+.basics {
+  margin: 64px 0 64px 56px;
+}
+.basics h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #071439;
+}
+.intro {
+  margin: 64px 0 0px 56px;
+}
+.intro h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #071439;
+}
+.intro p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #51545c;
+}
+.introNote {
+  background: #efefef;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  width: 784px;
+  margin-bottom: 174px;
+  margin-left: 56px;
+}
+.introNote p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  color: #9999bc;
+  width: 704px;
+  padding-left: 16px;
+}
+.notesCards {
+  display: flex;
+}
+.controls {
+  margin-left: 56px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.controls .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #071439;
+  border-radius: 8px;
+  width: 359px;
+  height: 72px;
+  cursor: pointer;
+  padding: 0 24px;
+}
+.card .previous {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  color: #ea8d51;
+}
+.card .basic {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #071439;
+}
+.table-container {
+  width: 788px;
+  height: 412px;
+  overflow-y: scroll;
+}
+table {
+  border-collapse: collapse;
+  background: #fbfbfb;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+}
+.statusTable{
+  margin-left: 56px;
+}
+.statusList{
+  margin: 32px 0;
+  padding-left: 20px;
+}
+li::marker{
+  background: blue;
+  margin-left: 30px;
+}
+.statusTable th {
+  border-right: 1px solid #efefef;
+  padding: 16px;
+  border-collapse: collapse;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #071439;
+}
+.statusTable td {
+  border-right: 1px solid #efefef;
+  padding: 16px;
+  align-items: flex-start;
+  /* text-align: center; */
+  border-collapse: collapse;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #51545C;
+}
+.table th {
+  border-right: 1px solid #efefef;
+  padding: 24px;
+  border-collapse: collapse;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d9091;
+}
+.table td {
+  border-right: 1px solid #efefef;
+  padding: 48px 27px 16px 27px;
+  text-align: center;
+  border-collapse: collapse;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d9091;
 }
 </style>
