@@ -19,17 +19,21 @@
 export default {
     data(){
         return{
+            // The only way to assign the same ref to multiple elements is to use a v-for 
             tabList: ['Cancel', 'Upload', 'Forward', 'Complete']
         }
     },
     mounted(){
+        // Setting the first tab to active by default
         this.$refs.tab[0].className = 'active';
     },
     methods:{
         isClicked(e){
+            // Removing the active class from all li tabs
             for(let i = 0; i < this.$refs.tab?.length; i++){
                 this.$refs.tab[i].className = '';
             }
+            // Setting the class of selected tab to active
             e.currentTarget.className = 'active'
         }
     }
