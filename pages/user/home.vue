@@ -142,6 +142,7 @@
           virtue of the meaning of the words in the statement. In his work, Kant
         </p>
       </div>
+      <the-code-block-with-tabs />
     </div>
     <div class="statusTable">
       <div class="table-container">
@@ -354,11 +355,13 @@
 </template>
 
 <script>
-import userLayout from '~/layouts/user-layout.vue'
+import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
 
 export default {
-  layout: 'userLayout',
   name: 'IndexPage',
+  components:{
+    TheCodeBlockWithTabs
+  },
   data() {
     return {
       header: 'Introduction',
