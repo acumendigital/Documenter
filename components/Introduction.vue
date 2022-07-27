@@ -10,8 +10,8 @@
           {{ content }}
         </p>
         <div class="link">
-        <a href="#">{{ link }}</a>
-      </div>
+          <a href="#">{{ link }}</a>
+        </div>
       </div>
     </div>
   </div>
@@ -30,14 +30,14 @@ export default {
 <style scoped>
 .container {
   height: 254px;
+  width: 272px;
   margin-right: 48px;
+   background: #fbfbfb;
 }
 .image img {
   margin-bottom: 0 !important;
 }
 .content {
-  width: 272px;
-  height: 141px;
   background: #fbfbfb;
   border: 1px solid #efefef;
   border-radius: 0px 0px 8px 8px;
@@ -57,6 +57,7 @@ export default {
 }
 .link {
   margin: 16px 0 0 0;
+  padding-bottom: 10px;
 }
 .link a {
   font-weight: 400;

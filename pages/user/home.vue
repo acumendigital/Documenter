@@ -142,7 +142,6 @@
           virtue of the meaning of the words in the statement. In his work, Kant
         </p>
       </div>
-      <the-code-block-with-tabs />
     </div>
     <div class="statusTable">
       <div class="table-container">
@@ -153,31 +152,62 @@
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to Kant, knowledge about space is synthetic, in that statements about space are not simply true by virtue of the meaning of the words in the statement. In his work, Kant</td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to Kant, knowledge about
+              space is synthetic, in that statements about space are not simply
+              true by virtue of the meaning of the words in the statement. In
+              his work, Kant
+            </td>
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to
+            </td>
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to
+            </td>
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to
+            </td>
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to
+            </td>
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to
+            </td>
           </tr>
           <tr>
             <td>Canceled</td>
-            <td>In the eighteenth century the German philosopher Immanuel Kant developed a theory of knowledge in which knowledge about space can be both a priori and synthetic. According to </td>
+            <td>
+              In the eighteenth century the German philosopher Immanuel Kant
+              developed a theory of knowledge in which knowledge about space can
+              be both a priori and synthetic. According to
+            </td>
           </tr>
         </table>
       </div>
@@ -191,7 +221,9 @@
         <li>According to Kant, knowledge about space is synthetic, in that</li>
       </ul>
     </div>
-    <div class="tabs"></div>
+    <div class="tabs">
+      <TheCodeBlockWithTabs />
+    </div>
     <div class="code">
       <img src="~/assets/images/syntax.svg" />
       <img src="~/assets/images/syntax2.svg" />
@@ -359,8 +391,8 @@ import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vu
 
 export default {
   name: 'IndexPage',
-  components:{
-    TheCodeBlockWithTabs
+  components: {
+    TheCodeBlockWithTabs,
   },
   data() {
     return {
@@ -441,13 +473,13 @@ export default {
 .introductionThree ul {
   margin-bottom: 32px;
   padding: 0;
-   padding-left: 20px;
+  padding-left: 20px;
 }
 .introductionFour ol {
   margin-bottom: 64px;
-   padding-left: 15px;
+  padding-left: 15px;
 }
-ol li{
+ol li {
   padding-left: 5px;
 }
 .line {
@@ -678,14 +710,14 @@ table {
   border: 1px solid #efefef;
   border-radius: 8px;
 }
-.statusTable{
+.statusTable {
   margin-left: 56px;
 }
-.statusList{
+.statusList {
   margin: 32px 0;
   padding-left: 20px;
 }
-li::marker{
+li::marker {
   background: blue;
   margin-left: 30px;
 }
@@ -708,7 +740,7 @@ li::marker{
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #51545C;
+  color: #51545c;
 }
 .table th {
   border-right: 1px solid #efefef;
@@ -728,5 +760,9 @@ li::marker{
   font-size: 16px;
   line-height: 24px;
   color: #8d9091;
+}
+.tabs{
+  margin-left: 56px;
+  margin-bottom: 47px;
 }
 </style>
