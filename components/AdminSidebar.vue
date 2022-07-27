@@ -99,7 +99,7 @@
 .page-header{
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.1rem;
+  line-height: 1.12rem;
   margin: 0;
   color: #9999BC;
   font-family: 'HankenSans Regular';
