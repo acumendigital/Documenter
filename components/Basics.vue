@@ -5,8 +5,7 @@
         class="content"
         @click="
           clicked = true
-          $router.push('#')
-        "
+          $router.push('#')"
       >
         <img src="~/assets/images/slider.svg" />
         <p>
