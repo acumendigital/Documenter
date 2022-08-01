@@ -125,7 +125,11 @@
       </div>
 
       <div class="subTopicThree">
-        <img src="~/assets/images/syntax.svg" />
+        <div class="codeContent">
+          <textarea v-model="codeContent" id="syntax1"></textarea>
+        </div>
+       
+
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
           developed a theory of knowledge in which knowledge about space can be
@@ -133,7 +137,9 @@
           is synthetic, in that statements about space are not simply true by
           virtue of the meaning of the words in the statement. In his work, Kant
         </p>
-        <img src="~/assets/images/syntax.svg" />
+        <div class="codeContent">
+          <textarea v-model="codeContent" id="syntax2"></textarea>
+        </div>
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
           developed a theory of knowledge in which knowledge about space can be
@@ -225,12 +231,18 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-      <img src="~/assets/images/syntax.svg" />
-      <img src="~/assets/images/syntax2.svg" />
+     <div class="codeContent">
+          <textarea v-model="codeContent" id="syntax3"></textarea>
+        </div>
+      <div class="codeContent white">
+          <textarea v-model="codeContent" id="syntax4"></textarea>
+        </div>
     </div>
     <div class="line"></div>
     <div class="response">
-      <img src="~/assets/images/syntax.svg" />
+     <div class="codeContent">
+          <textarea v-model="codeContent" id="syntax5"></textarea>
+        </div>
     </div>
     <div class="line"></div>
     <div class="bulb">
@@ -387,6 +399,10 @@
 </template>
 
 <script>
+import * as CodeMirror from 'codemirror'
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/dracula.css'
+import 'codemirror/mode/javascript/javascript.js'
 import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
 
 export default {
@@ -396,6 +412,8 @@ export default {
   },
   data() {
     return {
+      codeContent:
+        '  // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
       header: 'Introduction',
       link: 'Get started',
       content:
@@ -407,6 +425,39 @@ export default {
         'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
       title: 'Basics',
     }
+  },
+  mounted() {
+    CodeMirror.fromTextArea(document.getElementById('syntax1'), {
+      lineNumbers: true,
+      theme: 'dracula',
+      mode: 'javascript',
+      readOnly: true,
+    })
+    // syntax1.setSize('300','500')
+    CodeMirror.fromTextArea(document.getElementById('syntax2'), {
+      lineNumbers: true,
+      theme: 'dracula',
+      mode: 'javascript',
+      readOnly: true,
+    })
+    CodeMirror.fromTextArea(document.getElementById('syntax3'), {
+      lineNumbers: true,
+      theme: 'dracula',
+      mode: 'javascript',
+      readOnly: true,
+    })
+    CodeMirror.fromTextArea(document.getElementById('syntax4'), {
+      lineNumbers: true,
+      theme: 'base16-light',
+      mode: 'javascript',
+      readOnly: true,
+    })
+    CodeMirror.fromTextArea(document.getElementById('syntax5'), {
+      lineNumbers: true,
+      theme: 'dracula',
+      mode: 'javascript',
+      readOnly: true,
+    })
   },
 }
 </script>
@@ -761,8 +812,26 @@ li::marker {
   line-height: 24px;
   color: #8d9091;
 }
-.tabs{
+.tabs {
   margin-left: 56px;
   margin-bottom: 47px;
+}
+.codeContent {
+  width: 788px;
+  /* height: 288px; */
+ background: #151718;
+  border-radius: 8px;
+}
+textarea {
+  resize: none;
+  border-radius: 8px;
+}
+.white{
+  margin-top: 24px;
+}
+.CodeMirror {
+  border: 1px solid red;
+  height: auto;
+  border-radius: 8px;
 }
 </style>
