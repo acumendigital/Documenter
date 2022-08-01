@@ -1,6 +1,8 @@
 <template>
   <div class="main">
+    <div class="admin-sidebar">
       <AdminSidebar />
+    </div>
     <div class="main-layout">
       <div class="header">
         <AdminHeader />
@@ -21,12 +23,18 @@
 <style scoped>
 .main{
   display: flex;
+  font-family: 'HankenSans Regular';
 }
-.main-layout{
-  /* width: calc(100% - 270px);
-  margin-left: 270px; */
+.admin-sidebar{
+  overflow-y: auto;
+  overflow-x: none;
 }
 .main-content{
   background-color: #FFF;
+  padding: 61px 100px;
+}
+.main-layout{
+  overflow-y: auto;
+  overflow-x: none;
 }
 </style>
