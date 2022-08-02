@@ -128,7 +128,7 @@
         <div class="codeContent">
           <textarea v-model="codeContent" id="syntax1"></textarea>
         </div>
-       
+        <!-- < /> -->
 
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
@@ -140,6 +140,7 @@
         <div class="codeContent">
           <textarea v-model="codeContent" id="syntax2"></textarea>
         </div>
+        <!-- < /> -->
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
           developed a theory of knowledge in which knowledge about space can be
@@ -231,18 +232,22 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-     <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax3"></textarea>
-        </div>
+      <div class="codeContent">
+        <textarea v-model="codeContent" id="syntax3"></textarea>
+      </div>
       <div class="codeContent white">
-          <textarea v-model="codeContent" id="syntax4"></textarea>
-        </div>
+        <textarea v-model="codeContent" id="syntax4"></textarea>
+      </div>
     </div>
     <div class="line"></div>
     <div class="response">
-     <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax5"></textarea>
-        </div>
+      <div class="codeContent">
+        <textarea v-model="codeContent" id="syntax5"></textarea>
+      </div>
+      <!-- <div class="codeContent">
+        < />
+      </div>
+      < /> -->
     </div>
     <div class="line"></div>
     <div class="bulb">
@@ -404,6 +409,7 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
+// importTheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
 
 export default {
   name: 'IndexPage',
@@ -433,7 +439,6 @@ export default {
       mode: 'javascript',
       readOnly: true,
     })
-    // syntax1.setSize('300','500')
     CodeMirror.fromTextArea(document.getElementById('syntax2'), {
       lineNumbers: true,
       theme: 'dracula',
@@ -467,12 +472,12 @@ export default {
   width: 90%;
   /* margin: 20px auto; */
   max-width: 900px;
-  /* background: green; */
   background: #fff;
 }
 .introduction {
   padding: 0px 0px 64px 0px;
-  margin-left: 56px;
+  /* margin-left: 56px; */
+  padding: 0 56px;
 }
 .header h2 {
   font-weight: 700;
@@ -493,7 +498,8 @@ export default {
 }
 .introductionTwo {
   margin: 64px 0 0px 0px;
-  margin-left: 56px;
+  /* margin-left: 56px; */
+  padding: 0 56px;
 }
 .sub-header h2 {
   font-weight: 700;
@@ -541,16 +547,18 @@ ol li {
   border: 1px solid #efefef;
   border-radius: 8px;
   padding: 24px 44px 34px 40px;
-  width: 868px;
+  /* width: 868px; */
   margin-left: 16px;
+   margin-right: 16px;
 }
 .topicTwo,
 .topicThree {
   margin: 64px 0 32px 0px;
   border-radius: 8px;
   /* padding: 24px 44px 34px 40px; */
-  width: 868px;
-  margin-left: 56px;
+  /* width: 868px; */
+  /* margin-left: 56px; */
+  padding: 0 56px;
 }
 .subTopic h2 {
   font-weight: 700;
@@ -572,7 +580,7 @@ ol li {
   display: flex;
   align-items: center;
   padding: 24px;
-  width: 784px;
+  /* width: 784px; */
 }
 .beware p {
   font-weight: 400;
@@ -602,7 +610,7 @@ ol li {
   display: flex;
   align-items: center;
   padding: 24px;
-  width: 784px;
+  /* width: 784px; */
 }
 .note p {
   font-weight: 400;
@@ -633,9 +641,11 @@ ol li {
   border: 1px solid #efefef;
   border-radius: 8px;
   margin-left: 56px;
-  width: 788px;
+  margin-right: 56px;
+  /* width: 788px; */
   padding: 72px 29px 0 24px;
   margin-bottom: 64px;
+  /* padding: 0 56px; */
 }
 .code img {
   margin-bottom: 24px;
@@ -645,10 +655,12 @@ ol li {
   border: 1px solid #efefef;
   border-radius: 8px;
   margin-left: 56px;
-  width: 788px;
+  margin-right: 56px;
+  /* width: 788px; */
   padding: 72px 29px 24px 24px;
   margin-top: 64px;
   margin-bottom: 64px;
+  /* padding: 0 56px; */
 }
 .bulb {
   margin: 64px 0 64px 56px;
@@ -664,6 +676,7 @@ ol li {
   font-size: 14px;
   line-height: 24px;
   color: #51545c;
+  width: 713px;
 }
 .table {
   margin: 64px 0 64px 56px;
@@ -675,7 +688,7 @@ ol li {
   color: #071439;
 }
 .basics {
-  margin: 64px 0 64px 56px;
+  margin: 64px 56px 64px 56px;
 }
 .basics h2 {
   font-weight: 700;
@@ -684,7 +697,8 @@ ol li {
   color: #071439;
 }
 .intro {
-  margin: 64px 0 0px 56px;
+  margin: 64px 0 0px 0;
+  padding: 0 56px;
 }
 .intro h2 {
   font-weight: 700;
@@ -705,7 +719,7 @@ ol li {
   display: flex;
   align-items: center;
   padding: 24px;
-  width: 784px;
+  width: 730px;
   margin-bottom: 174px;
   margin-left: 56px;
 }
@@ -722,6 +736,7 @@ ol li {
 }
 .controls {
   margin-left: 56px;
+   margin-right: 56px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -737,12 +752,14 @@ ol li {
   height: 72px;
   cursor: pointer;
   padding: 0 24px;
+   margin-right: 20px;
 }
 .card .previous {
   font-weight: 400;
   font-size: 12px;
   line-height: 24px;
   color: #ea8d51;
+  margin-right: 24px;
 }
 .card .basic {
   font-weight: 500;
@@ -813,25 +830,21 @@ li::marker {
   color: #8d9091;
 }
 .tabs {
-  margin-left: 56px;
+  /* margin-left: 56px; */
+  padding: 0 56px;
   margin-bottom: 47px;
 }
 .codeContent {
-  width: 788px;
+  /* width: 788px; */
   /* height: 288px; */
- background: #151718;
+  background: #151718;
   border-radius: 8px;
 }
 textarea {
   resize: none;
   border-radius: 8px;
 }
-.white{
+.white {
   margin-top: 24px;
-}
-.CodeMirror {
-  border: 1px solid red;
-  height: auto;
-  border-radius: 8px;
 }
 </style>

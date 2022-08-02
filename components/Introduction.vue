@@ -32,6 +32,7 @@ export default {
   height: 254px;
   width: 272px;
   margin-right: 48px;
+  margin-bottom: 64px;
    background: #fbfbfb;
 }
 .image img {
