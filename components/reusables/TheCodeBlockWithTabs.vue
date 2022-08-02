@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .tabs-code-block-container {
   background: #fbfbfb;
   border: 1px solid #efefef;

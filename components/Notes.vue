@@ -31,7 +31,7 @@ export default {
   margin-bottom: 0 !important;
 }
 .content {
-  width: 236px;
+  /* width: 236px; */
   /* height: 132px; */
   background: #fbfbfb;
  border: 1px solid #9999bc;
