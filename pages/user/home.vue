@@ -642,7 +642,6 @@ ol li {
   border-radius: 8px;
   margin-left: 56px;
   margin-right: 56px;
-  /* width: 788px; */
   padding: 72px 29px 0 24px;
   margin-bottom: 64px;
   /* padding: 0 56px; */
@@ -656,7 +655,6 @@ ol li {
   border-radius: 8px;
   margin-left: 56px;
   margin-right: 56px;
-  /* width: 788px; */
   padding: 72px 29px 24px 24px;
   margin-top: 64px;
   margin-bottom: 64px;
