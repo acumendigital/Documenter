@@ -16,7 +16,7 @@
       <div class="code-block">
         <div class="code-block-img">
           <div class="codeContent">
-            <textarea v-model="codeContent" id="syntax6"></textarea>
+            <textarea v-model="cancel" ref="syntaxTab"></textarea>
           </div>
         </div>
       </div>
@@ -34,15 +34,27 @@ export default {
     return {
       codeContent:
         '  // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+      cancel:
+        '  // \n // \n\n import CANCEL from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+      upload:
+        '  // \n // \n\n import UPLOAD from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+      forward:
+        '  // \n // \n\n import FORWARD from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+      complete:
+        '  // \n // \n\n import COMPLETE from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+
       // The only way to assign the same ref to multiple elements is to use a v-for
       tabList: ['Cancel', 'Upload', 'Forward', 'Complete'],
+      codeMirrorInstance: '',
     }
   },
+
   mounted() {
-    CodeMirror.fromTextArea(document.getElementById('syntax6'), {
+    this.codeMirrorInstance = CodeMirror.fromTextArea(this.$refs.syntaxTab, {
       lineNumbers: true,
       theme: 'dracula',
       mode: 'javascript',
+      refresh: true,
     })
     // Setting the first tab to active by default
     this.$refs.tab[0].className = 'active'
@@ -55,6 +67,17 @@ export default {
       }
       // Setting the class of selected tab to active
       e.currentTarget.className = 'active'
+      console.log(e.currentTarget.innerText)
+      const currentTab = e.currentTarget.innerText
+      if (currentTab === 'Cancel') {
+        this.codeMirrorInstance.getDoc().setValue(this.cancel)
+      } else if (currentTab === 'Upload') {
+        this.codeMirrorInstance.getDoc().setValue(this.upload)
+      } else if (currentTab === 'Forward') {
+        this.codeMirrorInstance.getDoc().setValue(this.forward)
+      } else if (currentTab === 'Complete') {
+        this.codeMirrorInstance.getDoc().setValue(this.complete)
+      }
     },
   },
 }

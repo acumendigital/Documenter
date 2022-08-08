@@ -125,10 +125,7 @@
       </div>
 
       <div class="subTopicThree">
-        <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax1"></textarea>
-        </div>
-        <!-- < /> -->
+        <div><TheCodeBlockWithText /></div>
 
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
@@ -137,10 +134,7 @@
           is synthetic, in that statements about space are not simply true by
           virtue of the meaning of the words in the statement. In his work, Kant
         </p>
-        <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax2"></textarea>
-        </div>
-        <!-- < /> -->
+        <div><TheCodeBlockWithText /></div>
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
           developed a theory of knowledge in which knowledge about space can be
@@ -232,22 +226,12 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-      <div class="codeContent">
-        <textarea v-model="codeContent" id="syntax3"></textarea>
-      </div>
-      <div class="codeContent white">
-        <textarea v-model="codeContent" id="syntax4"></textarea>
-      </div>
+      <div><TheCodeBlockWithText /></div>
+      <div class="white"><TheCodeBlockWithText /></div>
     </div>
     <div class="line"></div>
     <div class="response">
-      <div class="codeContent">
-        <textarea v-model="codeContent" id="syntax5"></textarea>
-      </div>
-      <!-- <div class="codeContent">
-        < />
-      </div>
-      < /> -->
+      <div><TheCodeBlockWithText /></div>
     </div>
     <div class="line"></div>
     <div class="bulb">
@@ -409,17 +393,16 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
-// importTheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
+import TheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     TheCodeBlockWithTabs,
+    TheCodeBlockWithText,
   },
   data() {
     return {
-      codeContent:
-        '  // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
       header: 'Introduction',
       link: 'Get started',
       content:
@@ -431,38 +414,6 @@ export default {
         'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
       title: 'Basics',
     }
-  },
-  mounted() {
-    CodeMirror.fromTextArea(document.getElementById('syntax1'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax2'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax3'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax4'), {
-      lineNumbers: true,
-      theme: 'base16-light',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax5'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
   },
 }
 </script>
@@ -549,7 +500,7 @@ ol li {
   padding: 24px 44px 34px 40px;
   /* width: 868px; */
   margin-left: 16px;
-   margin-right: 16px;
+  margin-right: 16px;
 }
 .topicTwo,
 .topicThree {
@@ -734,7 +685,7 @@ ol li {
 }
 .controls {
   margin-left: 56px;
-   margin-right: 56px;
+  margin-right: 56px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -750,7 +701,7 @@ ol li {
   height: 72px;
   cursor: pointer;
   padding: 0 24px;
-   margin-right: 20px;
+  margin-right: 20px;
 }
 .card .previous {
   font-weight: 400;
@@ -843,6 +794,6 @@ textarea {
   border-radius: 8px;
 }
 .white {
-  margin-top: 24px;
+  margin: 24px 0;
 }
 </style>
