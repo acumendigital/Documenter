@@ -1,0 +1,156 @@
+<template>
+  <div class="main-container">
+    <div class="first-section">
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.98999 5.93V4.42C1.98999 3.4 2.81999 2.57 3.83999 2.57H16.76C17.78 2.57 18.61 3.4 18.61 4.42V5.93" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.3 18.1V3.32" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.90002 18.1H12.48" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.6801 10.34H20.6901C21.4201 10.34 22.0101 10.93 22.0101 11.66V12.46" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16.08 21.43V10.87" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.9399 21.43H18.2199" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Text</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.5 4H16.5C17.12 4 17.67 4.02 18.16 4.09C20.79 4.38 21.5 5.62 21.5 9V15C21.5 18.38 20.79 19.62 18.16 19.91C17.67 19.98 17.12 20 16.5 20H7.5C6.88 20 6.33 19.98 5.84 19.91C3.21 19.62 2.5 18.38 2.5 15V9C2.5 5.62 3.21 4.38 5.84 4.09C6.33 4.02 6.88 4 7.5 4Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.5 10H17" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 15.5H7.02H17" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.0946 10H10.1036" stroke="#8D9091" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.0946 10H7.10359" stroke="#8D9091" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Card</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 10L6 12L8 14" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 10L18 12L16 14" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 9.66998L11 14.33" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Code Block</p>
+      </div>
+    </div>
+    <div class="second-section">
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.00002 13C8.34002 13.33 7.79002 13.82 7.38002 14.43C7.15002 14.78 7.15002 15.22 7.38002 15.57C7.79002 16.18 8.34002 16.67 9.00002 17" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.21 13C15.87 13.33 16.42 13.82 16.83 14.43C17.06 14.78 17.06 15.22 16.83 15.57C16.42 16.18 15.87 16.67 15.21 17" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.22998 8.01L21.45 8" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Code Table</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.5 18.97H8C4 18.97 2 17.97 2 12.97V7.96997C2 3.96997 4 1.96997 8 1.96997H16C20 1.96997 22 3.96997 22 7.96997V12.97C22 16.97 20 18.97 16 18.97H15.5C15.19 18.97 14.89 19.12 14.7 19.37L13.2 21.37C12.54 22.25 11.46 22.25 10.8 21.37L9.29999 19.37C9.13999 19.15 8.78 18.97 8.5 18.97Z" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 8.70001L6 10.7L8 12.7" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 8.70001L18 10.7L16 12.7" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 8.37L11 13.03" stroke="#8D9091" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Code &amp; Res</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 2V22" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 12H22" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Table</p>
+      </div>
+    </div>
+    <div class="third-section">
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Image</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 9V14" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.0001 21.41H5.94005C2.47005 21.41 1.02005 18.93 2.70005 15.9L5.82006 10.28L8.76006 5C10.5401 1.79 13.4601 1.79 15.2401 5L18.1801 10.29L21.3001 15.91C22.9801 18.94 21.5201 21.42 18.0601 21.42H12.0001V21.41Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.9945 17H12.0035" stroke="#8D9091" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Warning</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.75 2.45001C11.45 1.86001 12.58 1.86001 13.26 2.45001L14.84 3.80001C15.14 4.05001 15.71 4.26001 16.11 4.26001H17.81C18.87 4.26001 19.74 5.13001 19.74 6.19001V7.89001C19.74 8.29001 19.95 8.85001 20.2 9.15001L21.55 10.73C22.14 11.43 22.14 12.56 21.55 13.24L20.2 14.82C19.95 15.12 19.74 15.68 19.74 16.08V17.78C19.74 18.84 18.87 19.71 17.81 19.71H16.11C15.71 19.71 15.15 19.92 14.85 20.17L13.27 21.52C12.57 22.11 11.44 22.11 10.76 21.52L9.18001 20.17C8.88001 19.92 8.31 19.71 7.92 19.71H6.17C5.11 19.71 4.24 18.84 4.24 17.78V16.07C4.24 15.68 4.04 15.11 3.79 14.82L2.44 13.23C1.86 12.54 1.86 11.42 2.44 10.73L3.79 9.14001C4.04 8.84001 4.24 8.28001 4.24 7.89001V6.20001C4.24 5.14001 5.11 4.27001 6.17 4.27001H7.9C8.3 4.27001 8.86 4.06001 9.16 3.81001L10.75 2.45001Z" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8.13V12.96" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.9945 16H12.0035" stroke="#8D9091" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Note</p>
+      </div>
+    </div>
+    <div class="fourth-section">
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 4.5H21" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 9.5H21" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 14.5H21" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 19.5H21" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Divider</p>
+      </div>
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.99 17.5H16.5C19.52 17.5 22 15.03 22 12C22 8.98 19.53 6.5 16.5 6.5H14.99" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 6.5H7.5C4.47 6.5 2 8.97 2 12C2 15.02 4.47 17.5 7.5 17.5H9" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 12H16" stroke="#8D9091" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Link page</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name:'OptionsModal'
+  }
+</script>
+
+<style scoped>
+.main-container{
+  margin: 1.5rem 0 0 6.5rem;
+  background-color: #FFF;
+  box-shadow: 0px 3px 20px 5px rgba(69, 104, 209, 0.1);
+  border-radius: .5rem;
+  width: 288px;
+  /* height: 416px; */
+  padding: 2.6rem 2.5rem;
+}
+.first-section{
+  display: flex;
+  column-gap: 6rem;
+  margin-bottom: 2.6rem;
+  text-align: center;
+}
+.second-section{
+  display: flex;
+  column-gap: 5rem;
+  text-align: center;
+  margin-bottom: 2.6rem;
+}
+.third-section{
+  display: flex;
+  column-gap: 6.5rem;
+  text-align: center;
+  margin-bottom: 2.6rem;
+}
+.fourth-section{
+  display: flex;
+  column-gap: 6rem;
+  text-align: center;
+}
+p{
+  color: #8D9091;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 1rem;
+}
+</style>

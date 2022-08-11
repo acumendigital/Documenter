@@ -36,5 +36,7 @@
 .main-layout{
   overflow-y: auto;
   overflow-x: none;
+  width: calc(100% -270px);
+  margin-left: 270px;
 }
 </style>

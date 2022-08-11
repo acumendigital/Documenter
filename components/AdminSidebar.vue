@@ -5,7 +5,8 @@
         <path d="M29.9119 16.8123L28.4659 15.4949C28.0116 15.1061 27.4276 14.9071 26.8326 14.9376C26.238 14.9684 25.677 15.2267 25.2643 15.6603L16.127 25.8857L15.0322 32L20.9444 30.2692L30.0817 20.0368C30.485 19.5866 30.6944 18.9932 30.6638 18.3867C30.6328 17.7807 30.3647 17.2118 29.9179 16.8056L29.9119 16.8123Z" fill="#D53120"/>
         <path d="M1.89649 27.1329V4.48957C1.89649 3.80639 2.16539 3.15127 2.64398 2.66831C3.12258 2.18529 3.77166 1.91391 4.44859 1.91391H21.1832C21.8601 1.91391 22.5092 2.18529 22.9878 2.66831C23.4664 3.15132 23.7353 3.8064 23.7353 4.48957V13.7702H25.6316L25.632 4.48957C25.6304 3.29923 25.1612 2.1583 24.3271 1.31653C23.4934 0.47471 22.3625 0.00121526 21.1831 0H4.4485C3.26905 0.0011868 2.13856 0.47471 1.30449 1.31653C0.470759 2.15835 0.00160552 3.29923 0 4.48957V27.1329C0.00156799 28.3233 0.470759 29.4645 1.30449 30.3059C2.13861 31.1478 3.26905 31.6213 4.4485 31.6229H12.8191V29.7087H4.4485C3.77156 29.7087 3.12244 29.4373 2.6439 28.9543C2.1653 28.4712 1.8964 27.8162 1.8964 27.133L1.89649 27.1329Z" fill="#D53120"/>
     </svg>
-    <div class="top-section">
+    <div class="section">
+      <div class="top-section">
       <div class="test">
         <div @click="pageButton" class="page-section">
           <h1 class="page-header">Pages</h1>
@@ -16,38 +17,39 @@
         </div>
         <transition>
           <div class="dropdown-links" v-if="pageDropDownIsVisible">
-            <h1 class="page-header">Sample page</h1>
-            <h1 class="page-header">Sample page 1</h1>
+            <NuxtLink to ="/admin" class="dropdown-header">Sample page</NuxtLink>
+            <NuxtLink to ="/admin" class="dropdown-header">Sample page 1</NuxtLink>
           </div>
         </transition>
       </div>
+      </div>
+      <div class="bottom-section">
+        <NuxtLink to="/admin" class="trash-section">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.75 4.485C13.2525 4.2375 10.74 4.11 8.235 4.11C6.75 4.11 5.265 4.185 3.78 4.335L2.25 4.485" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.375 3.7275L6.54 2.745C6.66 2.0325 6.75 1.5 8.0175 1.5H9.9825C11.25 1.5 11.3475 2.0625 11.46 2.7525L11.625 3.7275" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.1375 6.855L13.65 14.4075C13.5675 15.585 13.5 16.5 11.4075 16.5H6.59255C4.50005 16.5 4.43255 15.585 4.35005 14.4075L3.86255 6.855" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.74756 12.375H10.2451" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.125 9.375H10.875" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1 class="page-header">Trash</h1>
+        </NuxtLink>
+        <NuxtLink to="/admin" class="settings-section">
+          <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 8.66V7.34C1.5 6.56 2.1375 5.915 2.925 5.915C4.2825 5.915 4.8375 4.955 4.155 3.7775C3.765 3.1025 3.9975 2.225 4.68 1.835L5.9775 1.0925C6.57 0.739998 7.335 0.949998 7.6875 1.5425L7.77 1.685C8.445 2.8625 9.555 2.8625 10.2375 1.685L10.32 1.5425C10.6725 0.949998 11.4375 0.739998 12.03 1.0925L13.3275 1.835C14.01 2.225 14.2425 3.1025 13.8525 3.7775C13.17 4.955 13.725 5.915 15.0825 5.915C15.8625 5.915 16.5075 6.5525 16.5075 7.34V8.66C16.5075 9.44 15.87 10.085 15.0825 10.085C13.725 10.085 13.17 11.045 13.8525 12.2225C14.2425 12.905 14.01 13.775 13.3275 14.165L12.03 14.9075C11.4375 15.26 10.6725 15.05 10.32 14.4575L10.2375 14.315C9.5625 13.1375 8.4525 13.1375 7.77 14.315L7.6875 14.4575C7.335 15.05 6.57 15.26 5.9775 14.9075L4.68 14.165C3.9975 13.775 3.765 12.8975 4.155 12.2225C4.8375 11.045 4.2825 10.085 2.925 10.085C2.1375 10.085 1.5 9.44 1.5 8.66Z" stroke="#9999BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1 class="page-header">Settings</h1>
+        </NuxtLink>
+        <NuxtLink to="/admin" class="help-section">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.75 13.8225H9.75L6.41249 16.0425C5.91749 16.3725 5.25 16.02 5.25 15.42V13.8225C3 13.8225 1.5 12.3225 1.5 10.0725V5.57249C1.5 3.32249 3 1.82249 5.25 1.82249H12.75C15 1.82249 16.5 3.32249 16.5 5.57249V10.0725C16.5 12.3225 15 13.8225 12.75 13.8225Z" stroke="#9999BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.99998 8.51999V8.36252C8.99998 7.85252 9.315 7.58251 9.63 7.36501C9.9375 7.15501 10.245 6.88501 10.245 6.39001C10.245 5.70001 9.68998 5.14499 8.99998 5.14499C8.30998 5.14499 7.755 5.70001 7.755 6.39001" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.99662 10.3125H9.00337" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1 class="page-header">Help</h1>
+        </NuxtLink>           
+      </div>
     </div>
-    <div class="bottom-section">
-      <div class="trash-section">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.75 4.485C13.2525 4.2375 10.74 4.11 8.235 4.11C6.75 4.11 5.265 4.185 3.78 4.335L2.25 4.485" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6.375 3.7275L6.54 2.745C6.66 2.0325 6.75 1.5 8.0175 1.5H9.9825C11.25 1.5 11.3475 2.0625 11.46 2.7525L11.625 3.7275" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M14.1375 6.855L13.65 14.4075C13.5675 15.585 13.5 16.5 11.4075 16.5H6.59255C4.50005 16.5 4.43255 15.585 4.35005 14.4075L3.86255 6.855" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M7.74756 12.375H10.2451" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M7.125 9.375H10.875" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <h1 class="page-header">Trash</h1>
-      </div>
-      <div class="settings-section">
-        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.5 8.66V7.34C1.5 6.56 2.1375 5.915 2.925 5.915C4.2825 5.915 4.8375 4.955 4.155 3.7775C3.765 3.1025 3.9975 2.225 4.68 1.835L5.9775 1.0925C6.57 0.739998 7.335 0.949998 7.6875 1.5425L7.77 1.685C8.445 2.8625 9.555 2.8625 10.2375 1.685L10.32 1.5425C10.6725 0.949998 11.4375 0.739998 12.03 1.0925L13.3275 1.835C14.01 2.225 14.2425 3.1025 13.8525 3.7775C13.17 4.955 13.725 5.915 15.0825 5.915C15.8625 5.915 16.5075 6.5525 16.5075 7.34V8.66C16.5075 9.44 15.87 10.085 15.0825 10.085C13.725 10.085 13.17 11.045 13.8525 12.2225C14.2425 12.905 14.01 13.775 13.3275 14.165L12.03 14.9075C11.4375 15.26 10.6725 15.05 10.32 14.4575L10.2375 14.315C9.5625 13.1375 8.4525 13.1375 7.77 14.315L7.6875 14.4575C7.335 15.05 6.57 15.26 5.9775 14.9075L4.68 14.165C3.9975 13.775 3.765 12.8975 4.155 12.2225C4.8375 11.045 4.2825 10.085 2.925 10.085C2.1375 10.085 1.5 9.44 1.5 8.66Z" stroke="#9999BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <h1 class="page-header">Settings</h1>
-      </div>
-      <div class="help-section">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.75 13.8225H9.75L6.41249 16.0425C5.91749 16.3725 5.25 16.02 5.25 15.42V13.8225C3 13.8225 1.5 12.3225 1.5 10.0725V5.57249C1.5 3.32249 3 1.82249 5.25 1.82249H12.75C15 1.82249 16.5 3.32249 16.5 5.57249V10.0725C16.5 12.3225 15 13.8225 12.75 13.8225Z" stroke="#9999BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8.99998 8.51999V8.36252C8.99998 7.85252 9.315 7.58251 9.63 7.36501C9.9375 7.15501 10.245 6.88501 10.245 6.39001C10.245 5.70001 9.68998 5.14499 8.99998 5.14499C8.30998 5.14499 7.755 5.70001 7.755 6.39001" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8.99662 10.3125H9.00337" stroke="#9999BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <h1 class="page-header">Help</h1>
-      </div>
-      </div>
   </div>
 </template>
 
@@ -70,17 +72,29 @@
 <style scoped>
 .main-container{
   width: 270px;
-  height: 4243px;
+  height: 100%;
   border-right: 1px solid #CCCCCC;
   padding-top: 2.5rem;
-  /* position: fixed; */
+  background-color: #FFFF;
+  position: fixed;
+}
+.section{
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 .documenter-icon{
   padding: 0 3rem 0 3.5rem;
+  position: sticky;
 }
 .top-section{
   padding: 4.5rem 0 2rem 0;
   border-bottom: 1px solid #CCCCCC;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+a{
+  text-decoration: none;
 }
 .test{
   padding-left: 3.5rem;
@@ -100,9 +114,20 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.1rem;
+  color: #9999BC;
+  margin: 0;
+  font-family: 'HankenSans Regular';
+}
+.dropdown-header{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.1rem;
   margin: 0;
   color: #9999BC;
   font-family: 'HankenSans Regular';
+}
+.dropdown-header:hover{
+  color: #D53120;
 }
 .bottom-section{
   display: flex;
