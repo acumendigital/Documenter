@@ -3,10 +3,7 @@
     <div class="note">
         <div class="note-icon">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.6667 14.1667H14V10C14 6.68667 11.3133 4 7.99999 4C4.68666 4 1.99999 6.68667 1.99999 10V14.1667H1.33333C1.05999 14.1667 0.833328 14.3933 0.833328 14.6667C0.833328 14.94 1.05999 15.1667 1.33333 15.1667H14.6667C14.94 15.1667 15.1667 14.94 15.1667 14.6667C15.1667 14.3933 14.94 14.1667 14.6667 14.1667Z" fill="#071439"/>
-                <path d="M8 2.50004C7.72667 2.50004 7.5 2.27337 7.5 2.00004V1.33337C7.5 1.06004 7.72667 0.833374 8 0.833374C8.27333 0.833374 8.5 1.06004 8.5 1.33337V2.00004C8.5 2.27337 8.27333 2.50004 8 2.50004Z" fill="#071439"/>
-                <path d="M3.33333 3.83333C3.20667 3.83333 3.08 3.78667 2.98 3.68667L2.31333 3.02C2.12 2.82667 2.12 2.50667 2.31333 2.31333C2.50667 2.12 2.82667 2.12 3.02 2.31333L3.68667 2.98C3.88 3.17333 3.88 3.49334 3.68667 3.68667C3.58667 3.78667 3.46 3.83333 3.33333 3.83333Z" fill="#071439"/>
-                <path d="M12.6667 3.83333C12.54 3.83333 12.4133 3.78667 12.3133 3.68667C12.12 3.49334 12.12 3.17333 12.3133 2.98L12.98 2.31333C13.1733 2.12 13.4933 2.12 13.6867 2.31333C13.88 2.50667 13.88 2.82667 13.6867 3.02L13.02 3.68667C12.92 3.78667 12.7933 3.83333 12.6667 3.83333Z" fill="#071439"/>
+                <path d="M14.5067 10.6134L10.24 2.93337C9.66667 1.90004 8.87333 1.33337 8 1.33337C7.12667 1.33337 6.33333 1.90004 5.76 2.93337L1.49333 10.6134C0.953334 11.5934 0.893334 12.5334 1.32667 13.2734C1.76 14.0134 2.61333 14.42 3.73333 14.42H12.2667C13.3867 14.42 14.24 14.0134 14.6733 13.2734C15.1067 12.5334 15.0467 11.5867 14.5067 10.6134ZM7.5 6.00004C7.5 5.72671 7.72667 5.50004 8 5.50004C8.27333 5.50004 8.5 5.72671 8.5 6.00004V9.33337C8.5 9.60671 8.27333 9.83337 8 9.83337C7.72667 9.83337 7.5 9.60671 7.5 9.33337V6.00004ZM8.47333 11.8067C8.44 11.8334 8.40667 11.86 8.37333 11.8867C8.33333 11.9134 8.29333 11.9334 8.25333 11.9467C8.21333 11.9667 8.17333 11.98 8.12667 11.9867C8.08667 11.9934 8.04 12 8 12C7.96 12 7.91333 11.9934 7.86667 11.9867C7.82667 11.98 7.78667 11.9667 7.74667 11.9467C7.70667 11.9334 7.66667 11.9134 7.62667 11.8867C7.59333 11.86 7.56 11.8334 7.52667 11.8067C7.40667 11.68 7.33333 11.5067 7.33333 11.3334C7.33333 11.16 7.40667 10.9867 7.52667 10.86C7.56 10.8334 7.59333 10.8067 7.62667 10.78C7.66667 10.7534 7.70667 10.7334 7.74667 10.72C7.78667 10.7 7.82667 10.6867 7.86667 10.68C7.95333 10.66 8.04667 10.66 8.12667 10.68C8.17333 10.6867 8.21333 10.7 8.25333 10.72C8.29333 10.7334 8.33333 10.7534 8.37333 10.78C8.40667 10.8067 8.44 10.8334 8.47333 10.86C8.59333 10.9867 8.66667 11.16 8.66667 11.3334C8.66667 11.5067 8.59333 11.68 8.47333 11.8067Z" fill="#EA8D51"/>
             </svg>
         </div>
         <div class="note-content" :class="{ blurred : !editing }">
@@ -37,7 +34,7 @@ export default {
             editorOption: {
                     theme: 'bubble',
                     bounds: '#edit-quill',
-                    placeholder: "NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem ",
+                    placeholder: "BEWARE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem ",
                 },
                 editing: false
         }
@@ -48,9 +45,10 @@ export default {
             if(this.content === ""){
                 this.editing = false;
             }
+            
       },
       onEditorChange(){
-        if(this.content == ""){
+        if(this.content === ""){
             this.editing = false;
         } else {
             this.editing = true;
@@ -75,8 +73,8 @@ export default {
     .note-container{
         padding: 24px;
         .note{
-            background: #DBE4FF;
-            border: 1px solid #4568D1;
+            background: #FFF1E9;
+            border: 1px solid #EA8D51;
             border-radius: 8px;
             @include flex-center;
             max-width: 704px;
