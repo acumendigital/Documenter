@@ -45,7 +45,7 @@ export default {
     methods:{
         onEditorBlur(quill){
             quill.blur();
-            if(this.content == ""){
+            if(this.content === ""){
                 this.editing = false;
             }
       },
@@ -75,9 +75,7 @@ export default {
     .note-container{
         padding: 24px;
         .note{
-            /* Tone Blue 02 */
             background: #DBE4FF;
-            /* Robin Blue */
             border: 1px solid #4568D1;
             border-radius: 8px;
             @include flex-center;
