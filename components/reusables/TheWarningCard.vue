@@ -48,7 +48,7 @@ export default {
             
       },
       onEditorChange(){
-        if(this.content == ""){
+        if(this.content === ""){
             this.editing = false;
         } else {
             this.editing = true;
