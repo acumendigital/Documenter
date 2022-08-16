@@ -5,6 +5,8 @@
             v-model="content"
             :options="editorOption"
             @blur="onEditorBlur($event)"
+            @change="showOptions"
+            @ready="onEditorReady($event)"
         />
     </div>
   </div>
@@ -26,7 +28,7 @@ export default {
             editorOption: {
                     theme: 'bubble',
                     bounds: '#edit-quill',
-                    placeholder: "Write something enlightening...",
+                    placeholder: "+   Press O for options",
                 },
         }
     },
@@ -35,6 +37,21 @@ export default {
             quill.blur();
             this.editing = false;
       },
+      onEditorReady(quill){
+            quill.focus();
+            quill.enable();
+            this.editing = true;
+            console.log("Quill is ready");
+      },
+      showOptions(){
+        if(this.content == '<p>o</p>' || this.content == '<p>O</p>'){
+            this.$emit('show-options')
+            console.log("O was pressed");
+        }
+        else{
+            this.$emit('hide-options');
+        }
+      }
     }
 }
 </script>

@@ -15,7 +15,8 @@
 
 <style scoped>
 .main-container{
-  padding: 2.6rem 7.1rem 0 53.8rem;
+  padding: 2.6rem 0 0 50.8rem;
+  /* position: fixed; */
 }
 .button-links{
   display: flex;
