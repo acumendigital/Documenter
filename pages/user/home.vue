@@ -125,10 +125,7 @@
       </div>
 
       <div class="subTopicThree">
-        <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax1"></textarea>
-        </div>
-       
+        <div><TheCodeBlockWithText /></div>
 
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
@@ -137,9 +134,8 @@
           is synthetic, in that statements about space are not simply true by
           virtue of the meaning of the words in the statement. In his work, Kant
         </p>
-        <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax2"></textarea>
-        </div>
+
+        <div><TheCodeBlockWithText /></div>
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
           developed a theory of knowledge in which knowledge about space can be
@@ -231,19 +227,20 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-     <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax3"></textarea>
-        </div>
-      <div class="codeContent white">
-          <textarea v-model="codeContent" id="syntax4"></textarea>
-        </div>
+      <div class="toggle">
+        <h3>Show Response</h3>
+        <label class="switch">
+          <input type="checkbox" @click="toggleCheckbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <div class="res"><TheCodeBlockWithResponse /></div>
+      <div class="white" v-if="checkbox"><TheCodeBlockWithResponse /></div>
     </div>
-    <div class="line"></div>
-    <div class="response">
-     <div class="codeContent">
-          <textarea v-model="codeContent" id="syntax5"></textarea>
-        </div>
-    </div>
+    <!-- <div class="line"></div> -->
+    <!-- <div class="response">
+      <div><TheCodeBlockWithResponse /></div>
+    </div> -->
     <div class="line"></div>
     <div class="bulb">
       <div>
@@ -404,16 +401,19 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
+import TheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
+import TheCodeBlockWithResponse from '~/components/reusables/TheCodeBlockWithResponse.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     TheCodeBlockWithTabs,
+    TheCodeBlockWithText,
+    TheCodeBlockWithResponse,
   },
   data() {
     return {
-      codeContent:
-        '  // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+      checkbox: false,
       header: 'Introduction',
       link: 'Get started',
       content:
@@ -426,38 +426,11 @@ export default {
       title: 'Basics',
     }
   },
-  mounted() {
-    CodeMirror.fromTextArea(document.getElementById('syntax1'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    // syntax1.setSize('300','500')
-    CodeMirror.fromTextArea(document.getElementById('syntax2'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax3'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax4'), {
-      lineNumbers: true,
-      theme: 'base16-light',
-      mode: 'javascript',
-      readOnly: true,
-    })
-    CodeMirror.fromTextArea(document.getElementById('syntax5'), {
-      lineNumbers: true,
-      theme: 'dracula',
-      mode: 'javascript',
-      readOnly: true,
-    })
+  methods: {
+    toggleCheckbox() {
+      this.checkbox = !this.checkbox
+      this.$emit('setCheckboxVal', this.checkbox)
+    },
   },
 }
 </script>
@@ -467,12 +440,12 @@ export default {
   width: 90%;
   /* margin: 20px auto; */
   max-width: 900px;
-  /* background: green; */
   background: #fff;
 }
 .introduction {
   padding: 0px 0px 64px 0px;
-  margin-left: 56px;
+  /* margin-left: 56px; */
+  padding: 0 56px;
 }
 .header h2 {
   font-weight: 700;
@@ -493,7 +466,8 @@ export default {
 }
 .introductionTwo {
   margin: 64px 0 0px 0px;
-  margin-left: 56px;
+  /* margin-left: 56px; */
+  padding: 0 56px;
 }
 .sub-header h2 {
   font-weight: 700;
@@ -541,16 +515,18 @@ ol li {
   border: 1px solid #efefef;
   border-radius: 8px;
   padding: 24px 44px 34px 40px;
-  width: 868px;
+  /* width: 868px; */
   margin-left: 16px;
+  margin-right: 16px;
 }
 .topicTwo,
 .topicThree {
   margin: 64px 0 32px 0px;
   border-radius: 8px;
   /* padding: 24px 44px 34px 40px; */
-  width: 868px;
-  margin-left: 56px;
+  /* width: 868px; */
+  /* margin-left: 56px; */
+  padding: 0 56px;
 }
 .subTopic h2 {
   font-weight: 700;
@@ -572,7 +548,7 @@ ol li {
   display: flex;
   align-items: center;
   padding: 24px;
-  width: 784px;
+  /* width: 784px; */
 }
 .beware p {
   font-weight: 400;
@@ -602,7 +578,7 @@ ol li {
   display: flex;
   align-items: center;
   padding: 24px;
-  width: 784px;
+  /* width: 784px; */
 }
 .note p {
   font-weight: 400;
@@ -633,11 +609,11 @@ ol li {
   border: 1px solid #efefef;
   border-radius: 8px;
   margin-left: 56px;
-  width: 788px;
-  padding: 72px 29px 0 24px;
+  margin-right: 56px;
+  padding: 0px 0 0 24px;
   margin-bottom: 64px;
 }
-.code img {
+.code .res {
   margin-bottom: 24px;
 }
 .response {
@@ -645,10 +621,11 @@ ol li {
   border: 1px solid #efefef;
   border-radius: 8px;
   margin-left: 56px;
-  width: 788px;
+  margin-right: 56px;
   padding: 72px 29px 24px 24px;
   margin-top: 64px;
   margin-bottom: 64px;
+  /* padding: 0 56px; */
 }
 .bulb {
   margin: 64px 0 64px 56px;
@@ -664,6 +641,7 @@ ol li {
   font-size: 14px;
   line-height: 24px;
   color: #51545c;
+  width: 713px;
 }
 .table {
   margin: 64px 0 64px 56px;
@@ -675,7 +653,7 @@ ol li {
   color: #071439;
 }
 .basics {
-  margin: 64px 0 64px 56px;
+  margin: 64px 56px 64px 56px;
 }
 .basics h2 {
   font-weight: 700;
@@ -684,7 +662,8 @@ ol li {
   color: #071439;
 }
 .intro {
-  margin: 64px 0 0px 56px;
+  margin: 64px 0 0px 0;
+  padding: 0 56px;
 }
 .intro h2 {
   font-weight: 700;
@@ -705,7 +684,7 @@ ol li {
   display: flex;
   align-items: center;
   padding: 24px;
-  width: 784px;
+  width: 730px;
   margin-bottom: 174px;
   margin-left: 56px;
 }
@@ -722,6 +701,7 @@ ol li {
 }
 .controls {
   margin-left: 56px;
+  margin-right: 56px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -737,12 +717,14 @@ ol li {
   height: 72px;
   cursor: pointer;
   padding: 0 24px;
+  margin-right: 20px;
 }
 .card .previous {
   font-weight: 400;
   font-size: 12px;
   line-height: 24px;
   color: #ea8d51;
+  margin-right: 24px;
 }
 .card .basic {
   font-weight: 500;
@@ -813,25 +795,86 @@ li::marker {
   color: #8d9091;
 }
 .tabs {
-  margin-left: 56px;
+
+  padding: 0 56px;
   margin-bottom: 47px;
 }
 .codeContent {
-  width: 788px;
-  /* height: 288px; */
- background: #151718;
+  background: #151718;
   border-radius: 8px;
 }
 textarea {
   resize: none;
   border-radius: 8px;
 }
-.white{
-  margin-top: 24px;
+.white {
+  margin: 24px 0;
 }
-.CodeMirror {
-  border: 1px solid red;
-  height: auto;
-  border-radius: 8px;
+.toggle {
+  padding: 0px 30px 0 54px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #071439;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+   margin-left: 18px;
+  width: 30px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8D9091;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+   height: 11px;
+  width: 11px;
+  left: 4px;
+  bottom: 4.7px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #15AE73;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #15AE73;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.slider.round {
+  border-radius: 5px;
+}
+
+.slider.round:before {
+  border-radius: 16%;
 }
 </style>
