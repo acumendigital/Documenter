@@ -795,13 +795,11 @@ li::marker {
   color: #8d9091;
 }
 .tabs {
-  /* margin-left: 56px; */
+
   padding: 0 56px;
   margin-bottom: 47px;
 }
 .codeContent {
-  /* width: 788px; */
-  /* height: 288px; */
   background: #151718;
   border-radius: 8px;
 }
