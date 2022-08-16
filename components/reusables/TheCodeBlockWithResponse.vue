@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <div class="copy" @click="copyToClipboard">
-      <img src="~/assets/images/copyToClipboard.svg" />
-    </div>
     <div class="codeContent">
       <textarea v-model="codeContent" ref="syntax"></textarea>
     </div>
@@ -37,34 +34,10 @@ export default {
       readOnly: 'true',
     })
   },
-  methods: {
-    copyToClipboard() {
-      // const copy = this.codeMirrorInstance.getDoc().cm.options.value
-      // copy.execCommand('copy')
-      // console.log(this.codeMirrorInstance.getDoc())
-      console.log('kemi')
-    },
-  },
 }
 </script>
 <style scoped>
-.container {
-  position: relative;
-  /* background: #4568d1;
-  padding: 8px;
-  border-radius: 200px; */
+.codeContent {
+  width: 735px;
 }
-.copy {
-  position: absolute;
-  top: 15px;
-  background: #4568d1;
-  padding: 8px;
-  border-radius: 200px;
-  padding: 8px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 3;
-}
-/* .copy img {
-} */
 </style>

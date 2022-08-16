@@ -134,6 +134,7 @@
           is synthetic, in that statements about space are not simply true by
           virtue of the meaning of the words in the statement. In his work, Kant
         </p>
+
         <div><TheCodeBlockWithText /></div>
         <p>
           In the eighteenth century the German philosopher Immanuel Kant
@@ -226,13 +227,20 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-      <div><TheCodeBlockWithText /></div>
-      <div class="white"><TheCodeBlockWithText /></div>
+      <div class="toggle">
+        <h3>Show Response</h3>
+        <label class="switch">
+          <input type="checkbox" @click="toggleCheckbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <div class="res"><TheCodeBlockWithResponse /></div>
+      <div class="white" v-if="checkbox"><TheCodeBlockWithResponse /></div>
     </div>
-    <div class="line"></div>
-    <div class="response">
-      <div><TheCodeBlockWithText /></div>
-    </div>
+    <!-- <div class="line"></div> -->
+    <!-- <div class="response">
+      <div><TheCodeBlockWithResponse /></div>
+    </div> -->
     <div class="line"></div>
     <div class="bulb">
       <div>
@@ -394,15 +402,18 @@ import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
 import TheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
+import TheCodeBlockWithResponse from '~/components/reusables/TheCodeBlockWithResponse.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     TheCodeBlockWithTabs,
     TheCodeBlockWithText,
+    TheCodeBlockWithResponse,
   },
   data() {
     return {
+      checkbox: false,
       header: 'Introduction',
       link: 'Get started',
       content:
@@ -414,6 +425,12 @@ export default {
         'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
       title: 'Basics',
     }
+  },
+  methods: {
+    toggleCheckbox() {
+      this.checkbox = !this.checkbox
+      this.$emit('setCheckboxVal', this.checkbox)
+    },
   },
 }
 </script>
@@ -593,11 +610,10 @@ ol li {
   border-radius: 8px;
   margin-left: 56px;
   margin-right: 56px;
-  padding: 72px 29px 0 24px;
+  padding: 0px 0 0 24px;
   margin-bottom: 64px;
-  /* padding: 0 56px; */
 }
-.code img {
+.code .res {
   margin-bottom: 24px;
 }
 .response {
@@ -795,5 +811,72 @@ textarea {
 }
 .white {
   margin: 24px 0;
+}
+.toggle {
+  padding: 0px 30px 0 54px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #071439;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+   margin-left: 18px;
+  width: 30px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8D9091;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+   height: 11px;
+  width: 11px;
+  left: 4px;
+  bottom: 4.7px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #15AE73;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #15AE73;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.slider.round {
+  border-radius: 5px;
+}
+
+.slider.round:before {
+  border-radius: 16%;
 }
 </style>
