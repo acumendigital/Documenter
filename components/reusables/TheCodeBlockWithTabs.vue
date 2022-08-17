@@ -16,7 +16,7 @@
       <div class="code-block">
         <div class="code-block-img">
           <div class="codeContent">
-            <textarea v-model="codeContent" id="syntax6"></textarea>
+            <textarea v-model="codeContent" ref="syntax6"></textarea>
           </div>
         </div>
       </div>
@@ -33,13 +33,14 @@ export default {
   data() {
     return {
       codeContent:
-        '  // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+        ' ',
+        // // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }
       // The only way to assign the same ref to multiple elements is to use a v-for
       tabList: ['Cancel', 'Upload', 'Forward', 'Complete'],
     }
   },
   mounted() {
-    CodeMirror.fromTextArea(document.getElementById('syntax6'), {
+    CodeMirror.fromTextArea(this.$refs.syntax6, {
       lineNumbers: true,
       theme: 'dracula',
       mode: 'javascript',
@@ -65,6 +66,8 @@ export default {
   background: #fbfbfb;
   border: 1px solid #efefef;
   border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   .tabs-code-block {
     .tabs-container {
       ul {
