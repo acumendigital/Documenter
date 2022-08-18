@@ -34,7 +34,7 @@ export default {
 .content {
   display: flex;
   align-items: center;
-  /* width: 359px; */
+  /* width: 788px; */
   background: #fbfbfb;
   border: 1px solid #efefef;
   border-radius: 8px;
