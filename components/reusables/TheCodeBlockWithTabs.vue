@@ -88,6 +88,8 @@ export default {
   background: #fbfbfb;
   border: 1px solid #efefef;
   border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   .tabs-code-block {
     .tabs-container {
       ul {

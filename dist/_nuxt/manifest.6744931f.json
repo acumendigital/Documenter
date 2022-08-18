@@ -1,6 +1,7 @@
 {
   "name": "documenter",
   "short_name": "documenter",
+  "description": "## Build Setup",
   "icons": [
     {
       "src": "/_nuxt/icons/icon_64x64.e3e9fb.png",
