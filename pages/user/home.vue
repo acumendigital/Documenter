@@ -480,7 +480,6 @@ ol li {
   padding: 72px 29px 24px 24px;
   margin-top: 64px;
   margin-bottom: 64px;
-  /* padding: 0 56px; */
 }
 .bulb {
   margin: 64px 0 64px 56px;
