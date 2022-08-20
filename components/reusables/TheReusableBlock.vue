@@ -1,6 +1,11 @@
 <template>
-    <div class="reusable-block-container"  @keydown.enter="enterPressed" @click="$emit('update-block-index', index)">
-        <the-normal-text @show-options="showOptions" @hide-options="hideOptions" v-show="blockDisplayed == 'Text'" />
+    <div class="reusable-block-container"  @keydown.enter="enterPressed" @click="updateIndex">
+        <the-normal-text
+         @show-options="showOptions" 
+         @hide-options="hideOptions" 
+         v-show="blockDisplayed == 'Text'" 
+         @update-block-index="updateIndex"
+        />
         <the-page-title-block v-show="blockDisplayed == 'page-title'" />
         <!-- <the-code-block-with-tabs v-show="blockDisplayed == 'Code Block'" /> -->
         <the-notes-container v-show="blockDisplayed == 'Note'"  />
@@ -65,6 +70,9 @@ export default {
         // Event handler to emit the hide-options event to parent component
         hideOptions(){
             this.$emit('hide-options');
+        },
+        updateIndex(){
+            this.$emit('update-block-index', this.index);
         }
     }
 }
