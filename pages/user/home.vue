@@ -146,73 +146,7 @@
       </div>
     </div>
     <div class="statusTable">
-      <div class="table-container">
-        <table>
-          <tr>
-            <th>Status</th>
-            <th>Description</th>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to Kant, knowledge about
-              space is synthetic, in that statements about space are not simply
-              true by virtue of the meaning of the words in the statement. In
-              his work, Kant
-            </td>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to
-            </td>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to
-            </td>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to
-            </td>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to
-            </td>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to
-            </td>
-          </tr>
-          <tr>
-            <td>Canceled</td>
-            <td>
-              In the eighteenth century the German philosopher Immanuel Kant
-              developed a theory of knowledge in which knowledge about space can
-              be both a priori and synthetic. According to
-            </td>
-          </tr>
-        </table>
-      </div>
+      <div class=""><StatusTable /></div>
 
       <ul class="statusList">
         <li>statements about space are not simply true by</li>
@@ -227,20 +161,8 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-      <div class="toggle">
-        <h3>Show Response</h3>
-        <label class="switch">
-          <input type="checkbox" @click="toggleCheckbox" />
-          <div class="slider round"></div>
-        </label>
-      </div>
       <div class="res"><TheCodeBlockWithResponse /></div>
-      <div class="white" v-if="checkbox"><TheCodeBlockWithResponse /></div>
     </div>
-    <!-- <div class="line"></div> -->
-    <!-- <div class="response">
-      <div><TheCodeBlockWithResponse /></div>
-    </div> -->
     <div class="line"></div>
     <div class="bulb">
       <div>
@@ -264,74 +186,7 @@
 
     <div class="table">
       <h2>Table</h2>
-      <div class="table-container">
-        <table>
-          <tr>
-            <th></th>
-            <th>Android SDK</th>
-            <th>Ios SDK</th>
-            <th>React</th>
-            <th>Javascript</th>
-            <th>React native SDK</th>
-          </tr>
-          <tr>
-            <td>Available Country</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Support for bluetooth</td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Support for smart readers</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-        </table>
-      </div>
+      <div class=""><Table /></div>
     </div>
     <div class="basics">
       <h2>Learn more abount Basics</h2>
@@ -403,6 +258,9 @@ import 'codemirror/mode/javascript/javascript.js'
 import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
 import TheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
 import TheCodeBlockWithResponse from '~/components/reusables/TheCodeBlockWithResponse.vue'
+import Response from '~/components/reusables/Response.vue'
+import Table from '~/components/reusables/Table.vue'
+import StatusTable from '~/components/reusables/StatusTable.vue'
 
 export default {
   name: 'IndexPage',
@@ -410,6 +268,9 @@ export default {
     TheCodeBlockWithTabs,
     TheCodeBlockWithText,
     TheCodeBlockWithResponse,
+    Response,
+    Table,
+    StatusTable,
   },
   data() {
     return {
@@ -425,12 +286,6 @@ export default {
         'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
       title: 'Basics',
     }
-  },
-  methods: {
-    toggleCheckbox() {
-      this.checkbox = !this.checkbox
-      this.$emit('setCheckboxVal', this.checkbox)
-    },
   },
 }
 </script>
@@ -625,7 +480,6 @@ ol li {
   padding: 72px 29px 24px 24px;
   margin-top: 64px;
   margin-bottom: 64px;
-  /* padding: 0 56px; */
 }
 .bulb {
   margin: 64px 0 64px 56px;
@@ -732,17 +586,6 @@ ol li {
   line-height: 18px;
   color: #071439;
 }
-.table-container {
-  width: 788px;
-  height: 412px;
-  overflow-y: scroll;
-}
-table {
-  border-collapse: collapse;
-  background: #fbfbfb;
-  border: 1px solid #efefef;
-  border-radius: 8px;
-}
 .statusTable {
   margin-left: 56px;
 }
@@ -754,48 +597,8 @@ li::marker {
   background: blue;
   margin-left: 30px;
 }
-.statusTable th {
-  border-right: 1px solid #efefef;
-  padding: 16px;
-  border-collapse: collapse;
-  text-align: left;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #071439;
-}
-.statusTable td {
-  border-right: 1px solid #efefef;
-  padding: 16px;
-  align-items: flex-start;
-  /* text-align: center; */
-  border-collapse: collapse;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #51545c;
-}
-.table th {
-  border-right: 1px solid #efefef;
-  padding: 24px;
-  border-collapse: collapse;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #8d9091;
-}
-.table td {
-  border-right: 1px solid #efefef;
-  padding: 48px 27px 16px 27px;
-  text-align: center;
-  border-collapse: collapse;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #8d9091;
-}
-.tabs {
 
+.tabs {
   padding: 0 56px;
   margin-bottom: 47px;
 }
@@ -806,75 +609,5 @@ li::marker {
 textarea {
   resize: none;
   border-radius: 8px;
-}
-.white {
-  margin: 24px 0;
-}
-.toggle {
-  padding: 0px 30px 0 54px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: #071439;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-   margin-left: 18px;
-  width: 30px;
-  height: 20px;
-}
-
-.switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #8D9091;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: '';
-   height: 11px;
-  width: 11px;
-  left: 4px;
-  bottom: 4.7px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #15AE73;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #15AE73;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  transform: translateX(10px);
-}
-
-.slider.round {
-  border-radius: 5px;
-}
-
-.slider.round:before {
-  border-radius: 16%;
 }
 </style>
