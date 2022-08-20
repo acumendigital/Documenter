@@ -2,16 +2,18 @@
     <div class="reusable-block-container"  @keydown.enter="enterPressed" @click="$emit('update-block-index', index)">
         <the-normal-text @show-options="showOptions" @hide-options="hideOptions" v-show="blockDisplayed == 'Text'" />
         <the-page-title-block v-show="blockDisplayed == 'page-title'" />
-        <the-code-block-with-tabs v-show="blockDisplayed == 'Code Block'" />
+        <!-- <the-code-block-with-tabs v-show="blockDisplayed == 'Code Block'" /> -->
         <the-notes-container v-show="blockDisplayed == 'Note'"  />
         <the-warning-card v-show="blockDisplayed == 'Warning'" />
         <the-info-card v-show="blockDisplayed == 'Info'" />
         <the-divider-component v-show="blockDisplayed == 'Divider'" />
+        <the-code-block v-show="blockDisplayed == 'Code Block'" />
     </div>
 </template>
 
 <script>
 import Notes from '../Notes.vue'
+import TheCodeBlock from './TheCodeBlock.vue';
 import TheCodeBlockWithTabs from './TheCodeBlockWithTabs.vue';
 import TheDividerComponent from './TheDividerComponent.vue';
 import TheInfoCard from './TheInfoCard.vue';
@@ -20,7 +22,7 @@ import TheNotesContainer from './TheNotesContainer.vue';
 import ThePageTitleBlock from './ThePageTitleBlock.vue'
 import TheWarningCard from './TheWarningCard.vue';
 export default {
-    components: { ThePageTitleBlock, Notes, TheNormalText, TheCodeBlockWithTabs, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent },
+    components: { ThePageTitleBlock, Notes, TheNormalText, TheCodeBlockWithTabs, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock },
     data(){
         return{
             showModal: false,
@@ -71,5 +73,6 @@ export default {
 <style lang="scss" scoped>
 .reusable-block-container{
     position: relative;
+    margin-top: 10px;
 }
 </style>
