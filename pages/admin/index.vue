@@ -1,6 +1,6 @@
 <template>
   <div class="admin-editable-area">
-    <the-page-title-block />
+    <the-page-title-block @enter-pressed="increaseBlocks" />
     <the-reusable-block 
         @enter-pressed="increaseBlocks" 
         @show-options="showOptionsModal" 
@@ -37,7 +37,7 @@ export default {
         return{
             noOfBlocks: 1,
             blockProperty: [
-                {id: 1, blockType: 'Text'},
+                // {id: 1, blockType: 'Text'},
             ],
             showModal: false,
             blockLists: [

@@ -1,6 +1,6 @@
 <template>
   <div class="code-block-container">
-    <div :class="{ editor : editing }" id="edit-quill" ref="editor">
+    <div :class="{ editor : editing }" id="edit-quill" ref="editor" @keydown.enter="$emit('enter-pressed')">
         <quill-editor 
             ref="myQuillEditor"
             v-model="content"
