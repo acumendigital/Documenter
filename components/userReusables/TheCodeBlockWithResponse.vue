@@ -23,7 +23,7 @@ import * as CodeMirror from 'codemirror'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
-import Response from '~/components/reusables/Response.vue'
+import Response from '~/components/userReusables/Response.vue'
 export default {
   components: {
     Response,

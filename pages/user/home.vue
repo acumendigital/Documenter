@@ -1,20 +1,8 @@
 <template>
   <div class="container">
     <div class="introduction">
-      <div class="header">
-        <h2>Introduction</h2>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-          rejected the view that space must be either a substance or relation.
-          Instead he came to the conclusion that space and time are not
-          discovered by humans to be objective features of the world, but
-          imposed by us as part of a framework for organizing experience.
-        </p>
-      </div>
+      <div><UserText /></div>
+
       <div class="cards">
         <Introduction :header="header" :content="content" />
         <Introduction :header="header" :content="content2" :link="link" />
@@ -24,138 +12,55 @@
 
     <div class="introductionTwo">
       <div class="sub-header">
-        <h2>Introduction</h2>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-          rejected the view that space must be either a substance or relation.
-          Instead he came to the conclusion that space and time are not
-          discovered by humans to be objective features of the world, but
-          imposed by us as part of a framework for organizing experience.
-        </p>
+        <div><UserText /></div>
       </div>
       <div class="introductionThree">
-        <h3>Introduction</h3>
-        <ul>
-          <li>statements about space are not simply true by</li>
-          <li>
-            In the eighteenth century the German philosopher Immanuel Kant
-            developed a theory
-          </li>
-          <li>
-            According to Kant, knowledge about space is synthetic, in that
-          </li>
-        </ul>
+        <div><UserText /></div>
       </div>
       <div class="introductionFour">
-        <h3>Introduction</h3>
-        <ol>
-          <li>statements about space are not simply true by</li>
-          <li>
-            In the eighteenth century the German philosopher Immanuel Kant
-            developed a theory
-          </li>
-          <li>
-            According to Kant, knowledge about space is synthetic, in that
-          </li>
-        </ol>
+        <div><UserText /></div>
       </div>
     </div>
     <div class="line"></div>
 
     <div class="topic">
       <div class="subTopic">
-        <h2>Sub Topic</h2>
-        <p>
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem
-        </p>
+        <div><UserText /></div>
       </div>
 
-      <div class="beware">
-        <img src="~/assets/images/danger.svg" />
-        <p>
-          BEWARE - s et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem
-        </p>
-      </div>
+       <WarningCard />
     </div>
     <div class="topicTwo">
       <div class="subTopicTwo">
-        <h2>Introduction</h2>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-        </p>
+        <div><UserText /></div>
       </div>
 
-      <div class="note">
-        <img src="~/assets/images/alarm.svg" />
-        <p>
-          NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis
-          praesentium voluptatum deleniti atque corrupti quos dolores et quas
-          molestias excepturi sint occaecati cupiditate non provident, similique
-          sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-          dolorum fuga. Et harum quidem
-        </p>
-      </div>
+      
+       <InfoCard />
+       <div><UserText /></div>
+      <div>
+     
+    </div>
     </div>
     <div class="topicThree">
       <div class="subTopicThree">
-        <h2>Introduction</h2>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-        </p>
+        <div><UserText /></div>
       </div>
 
       <div class="subTopicThree">
         <div><TheCodeBlockWithText /></div>
 
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-        </p>
+        <div><UserText /></div>
 
         <div><TheCodeBlockWithText /></div>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-        </p>
+
+        <div><UserText /></div>
       </div>
     </div>
     <div class="statusTable">
       <div class=""><StatusTable /></div>
 
-      <ul class="statusList">
-        <li>statements about space are not simply true by</li>
-        <li>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory
-        </li>
-        <li>According to Kant, knowledge about space is synthetic, in that</li>
-      </ul>
+      <div><UserText /></div>
     </div>
     <div class="tabs">
       <TheCodeBlockWithTabs />
@@ -166,18 +71,7 @@
     <div class="line"></div>
     <div class="bulb">
       <div>
-        <h2>Introduction</h2>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-          rejected the view that space must be either a substance or relation.
-          Instead he came to the conclusion that space and time are not
-          discovered by humans to be objective features of the world, but
-          imposed by us as part of a framework for organizing experience.
-        </p>
+        <div><UserText /></div>
       </div>
       <div>
         <img src="~/assets/images/bulb.svg" />
@@ -197,27 +91,15 @@
     </div>
     <div class="line"></div>
     <div class="intro">
-      <h2>Introduction</h2>
-      <p>
-        In the eighteenth century the German philosopher Immanuel Kant developed
-        a theory of knowledge in which knowledge about space can be both a
-        priori and synthetic. According to Kant, knowledge about space is
-        synthetic, in that statements about space are not simply true by virtue
-        of the meaning of the words in the statement. In his work, Kant
-      </p>
+      <div><UserText /></div>
       <div class="notesCards">
         <Notes :header="introduction" :content="notes" />
         <Notes :header="introduction" :content="notes" />
         <Notes :header="introduction" :content="notes" />
       </div>
     </div>
-    <div class="introNote">
-      <img src="~/assets/images/alarm.svg" />
-      <p>
-        NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis
-        praesentium voluptatum deleniti atque corrupti quos dolores et quas
-        molestias excepturi sint
-      </p>
+    <div>
+      <NoteCard />
     </div>
     <div class="controls">
       <div
@@ -255,12 +137,16 @@ import * as CodeMirror from 'codemirror'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
-import TheCodeBlockWithTabs from '~/components/reusables/TheCodeBlockWithTabs.vue'
-import TheCodeBlockWithText from '~/components/reusables/TheCodeBlockWithText.vue'
-import TheCodeBlockWithResponse from '~/components/reusables/TheCodeBlockWithResponse.vue'
-import Response from '~/components/reusables/Response.vue'
-import Table from '~/components/reusables/Table.vue'
-import StatusTable from '~/components/reusables/StatusTable.vue'
+import TheCodeBlockWithTabs from '~/components/userReusables/TheCodeBlockWithTabs.vue'
+import TheCodeBlockWithText from '~/components/userReusables/TheCodeBlockWithText.vue'
+import TheCodeBlockWithResponse from '~/components/userReusables/TheCodeBlockWithResponse.vue'
+import Response from '~/components/userReusables/Response.vue'
+import Table from '~/components/userReusables/Table.vue'
+import UserText from '~/components/userReusables/UserText.vue'
+import NoteCard from '~/components/userReusables/NoteCard.vue'
+import InfoCard from '~/components/userReusables/InfoCard.vue'
+import WarningCard from '~/components/userReusables/WarningCard.vue'
+import StatusTable from '~/components/userReusables/StatusTable.vue'
 
 export default {
   name: 'IndexPage',
@@ -270,7 +156,11 @@ export default {
     TheCodeBlockWithResponse,
     Response,
     Table,
+    UserText,
     StatusTable,
+    NoteCard,
+    WarningCard,
+    InfoCard
   },
   data() {
     return {
@@ -396,23 +286,7 @@ ol li {
   width: 788px;
   padding: 14px 0 32px 0;
 }
-.beware {
-  background: #fff1e9;
-  border: 1px solid #ea8d51;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  padding: 24px;
-  /* width: 784px; */
-}
-.beware p {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 24px;
-  color: #ea8d51;
-  width: 704px;
-  padding-left: 16px;
-}
+
 .subTopicTwo h2 {
   font-weight: 700;
   font-size: 24px;
@@ -531,25 +405,7 @@ ol li {
   line-height: 24px;
   color: #51545c;
 }
-.introNote {
-  background: #efefef;
-  border: 1px solid #cccccc;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  padding: 24px;
-  width: 730px;
-  margin-bottom: 174px;
-  margin-left: 56px;
-}
-.introNote p {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 24px;
-  color: #9999bc;
-  width: 704px;
-  padding-left: 16px;
-}
+
 .notesCards {
   display: flex;
 }
