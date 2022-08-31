@@ -19,7 +19,7 @@
 <script>
 import Notes from '../Notes.vue'
 import TheCodeBlock from './TheCodeBlock.vue';
-import TheCodeBlockWithTabs from './TheCodeBlockWithTabs.vue';
+import TheCodeBlockWithTabs from '../userReusables/TheCodeBlockWithTabs.vue';
 import TheDividerComponent from './TheDividerComponent.vue';
 import TheInfoCard from './TheInfoCard.vue';
 import TheNormalText from './TheNormalText.vue';
