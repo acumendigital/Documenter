@@ -2,14 +2,13 @@
   <div>
     <div class="first-container">
       <div class="first-section">
-        <img v-if="ImageURL" :src="ImageURL" alt="">
+        <img v-if="ImageURL" :src="newImage" alt="">
         <label v-else class="file-upload" for="file">Upload file</label>
-        <input ref="image" @input="ImageUpload" type="file" id="file" accept="image/*">        
-          <!-- <button class="file-upload">Upload file</button> -->
+        <input @input="ImageUpload" type="file" id="file" accept="image/*">  
       </div>
       <div class="second-section">
         <input @keyup.enter="PageHeaderClick" type="text">
-        <textarea ref="textarea" ></textarea>        
+        <textarea ref="textarea" ></textarea>
       </div>
     </div>
   </div>
@@ -17,11 +16,34 @@
 
 <script>
   export default {
+    props: {
+      index:{
+        type: Number
+      },
+      imageURLProp:{
+        type: String
+      }
+    },
+    watch:{
+        // Watcher to detect changes in the props value
+        imageURLProp:{
+            handler(newValue, oldValue){
+                this.changeImage(newValue);
+            }
+        },
+        index:{
+          handler(newValue, oldValue){
+            this.pcIndex = newValue;
+          }
+        }
+    },
     data(){
       return {
         Image: null,
-        ImageURL: null
-      }
+        ImageURL: null,
+        newImage: null,
+        pcIndex: this.index,
+      } 
     },
     methods: {
         PageHeaderClick(){
@@ -30,6 +52,11 @@
         ImageUpload(e){
           this.Image = e.target.files[0]
           this.ImageURL = URL.createObjectURL(this.Image)
+          console.log("This is the pc index:", this.pcIndex);
+          this.$emit('update-image', {index: this.pcIndex, url: URL.createObjectURL(this.Image)});
+        },
+        changeImage(imgURL){
+          this.newImage = imgURL;
         }
     }
   }

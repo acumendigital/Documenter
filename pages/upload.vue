@@ -1,8 +1,8 @@
 <template>
   <div class="main-container">
     <div class="sub-container">
-      <FileUpload v-for="card in numberOfCards" :key="card" />
-      <button class="upload-button" @click="numberOfCards++">
+      <FileUpload v-for="(card, index) in cards" :key="index" :index="card.id" :imageURLProp="card.imageURL" @update-image="updateCard" />
+      <button class="upload-button" @click="addCard()">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 40H60" stroke="#4568D1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M40 60V20" stroke="#4568D1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -17,7 +17,27 @@
     layout:'AdminLayout',
     data(){
       return {
-        numberOfCards: 1
+        cards: [{
+          image: null,
+          imageURL: null,
+          id: 0,
+        },
+        ],
+        newIndex: 0
+      }
+    },
+    methods: {
+      addCard(){
+        this.newIndex += 1;
+        this.cards.push({
+          image: null,
+          imageURL: null,
+          id: this.newIndex,
+        })
+      },
+      updateCard(imgProps){
+        this.cards[imgProps.index].imageURL = imgProps.url;
+        console.log(imgProps.index);
       }
     }
   }
