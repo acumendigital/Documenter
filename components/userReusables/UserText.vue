@@ -1,42 +1,51 @@
 <template>
   <div class="container">
-      <div class="header">
-        <h2>Introduction</h2>
-        <p>
-          In the eighteenth century the German philosopher Immanuel Kant
-          developed a theory of knowledge in which knowledge about space can be
-          both a priori and synthetic. According to Kant, knowledge about space
-          is synthetic, in that statements about space are not simply true by
-          virtue of the meaning of the words in the statement. In his work, Kant
-          rejected the view that space must be either a substance or relation.
-          Instead he came to the conclusion that space and time are not
-          discovered by humans to be objective features of the world, but
-          imposed by us as part of a framework for organizing experience.
-        </p>
-      </div>
-    
-    
+    <div class="header" >
+      <!-- <h2>{{ title }}</h2> -->
+      <h2>{{componentDetails.title}}</h2>
+      <p>
+        {{componentDetails.content}}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  data() {
-    return {
-     
+  props:{
+    componentDetails:{
+      type: Object
     }
   },
- 
+  data() {
+    return {
+      documentation: [],
+      pageSection: [],
+      title: '',
+    }
+  },
+
+  created() {
+    // this.getPage()
+  },
+
   methods: {
-   
+    // async getPage() {
+    //   const response = await this.$axios.get(
+    //     'https://robin-doc.herokuapp.com/api/v1/page/63161ddfe6b8691a7df2878b'
+    //   )
+    //   console.log(response.data)
+    //   console.log(response.data.data.title)
+    //   this.title = response.data.data.title
+    //   console.log(response.data.data.page_sections)
+    //   this.pageSection = response.data.data.page_sections
+    // },
   },
 }
 </script>
 <style scoped>
 .container {
   position: relative;
-  background: red;
 }
 .header h2 {
   font-weight: 700;
@@ -51,5 +60,4 @@ export default {
   width: 713px;
   padding: 16px 0 48px 0;
 }
-
 </style>

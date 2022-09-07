@@ -1,182 +1,41 @@
 <template>
   <div class="container">
     <div class="introduction">
-      <div><UserText /></div>
-
-      <div class="cards">
-        <CardImage :header="header" :content="content" />
-        <CardImage :header="header" :content="content2" :link="link" />
-      </div>
-    </div>
-    <div class="line"></div>
-
-    <div class="introductionTwo">
-      <div class="sub-header">
-        <div><UserText /></div>
-      </div>
-      <div class="introductionThree">
-        <div><UserText /></div>
-      </div>
-      <div class="introductionFour">
-        <div><UserText /></div>
-      </div>
-    </div>
-    <div class="line"></div>
-
-    <div class="topic">
-      <div class="subTopic">
-        <div><UserText /></div>
-      </div>
-
-      <WarningCard />
-    </div>
-    <div class="topicTwo">
-      <div class="subTopicTwo">
-        <div><UserText /></div>
-      </div>
-
-      <InfoCard />
-      <div><UserText /></div>
-      <div></div>
-    </div>
-    <div class="topicThree">
-      <div class="subTopicThree">
-        <div><UserText /></div>
-      </div>
-
-      <div class="subTopicThree">
-        <div><TheCodeBlockWithText /></div>
-
-        <div><UserText /></div>
-
-        <div><TheCodeBlockWithText /></div>
-
-        <div><UserText /></div>
-      </div>
-    </div>
-    <div class="statusTable">
-      <div class=""><StatusTable /></div>
-
-      <div><UserText /></div>
-    </div>
-    <div class="tabs">
-      <TheCodeBlockWithTabs />
-    </div>
-    <div class="code">
-      <div class="res"><TheCodeBlockWithResponse /></div>
-    </div>
-    <div class="line"></div>
-    <div class="bulb">
       <div>
-        <div><UserText /></div>
-      </div>
-      <div>
-        <img src="~/assets/images/bulb.svg" />
-      </div>
-    </div>
-
-    <div class="table">
-      <h2>Table</h2>
-      <div class=""><Table /></div>
-    </div>
-    <div class="basics">
-      <h2>Learn more abount Basics</h2>
-      <div class="basicsCrads">
-        <Basics :title="title" />
-        <Basics :title="title" />
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="intro">
-      <div><UserText /></div>
-      <div class="notesCards">
-        <Card :header="introduction" :content="notes" />
-        <Card :header="introduction" :content="notes" />
-        <Card :header="introduction" :content="notes" />
-      </div>
-    </div>
-    <div>
-      <NoteCard />
-    </div>
-    <div class="controls">
-      <div
-        class="card"
-        @click="
-          clicked = true
-          $router.push('#')
-        "
-      >
-        <img src="~/assets/images/left.svg" />
-        <div>
-          <p class="previous">Previous</p>
-          <p class="basic">Basics</p>
-        </div>
-      </div>
-      <div
-        class="card"
-        @click="
-          clicked = true
-          $router.push('#')
-        "
-      >
-        <div>
-          <p class="previous">Next</p>
-          <p class="basic">Control</p>
-        </div>
-        <img src="~/assets/images/right.svg" />
+        <UserReusableBlock v-for="section in pageSection" :key="section._id" :sectionProp="section" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import * as CodeMirror from 'codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/dracula.css'
-import 'codemirror/mode/javascript/javascript.js'
-import TheCodeBlockWithTabs from '~/components/userReusables/TheCodeBlockWithTabs.vue'
-import TheCodeBlockWithText from '~/components/userReusables/TheCodeBlockWithText.vue'
-import TheCodeBlockWithResponse from '~/components/userReusables/TheCodeBlockWithResponse.vue'
-import Response from '~/components/userReusables/Response.vue'
-import Table from '~/components/userReusables/Table.vue'
 import UserText from '~/components/userReusables/UserText.vue'
-import NoteCard from '~/components/userReusables/NoteCard.vue'
-import InfoCard from '~/components/userReusables/InfoCard.vue'
-import WarningCard from '~/components/userReusables/WarningCard.vue'
-import StatusTable from '~/components/userReusables/StatusTable.vue'
-import CardImage from '~/components/userReusables/CardImage.vue'
-import Card from '~/components/userReusables/Card.vue'
+import UserReusableBlock from '~/components/userReusables/UserReusableBlock.vue'
 
 export default {
   name: 'IndexPage',
   components: {
-    TheCodeBlockWithTabs,
-    TheCodeBlockWithText,
-    TheCodeBlockWithResponse,
-    Response,
-    Table,
     UserText,
-    StatusTable,
-    NoteCard,
-    WarningCard,
-    InfoCard,
-    Card,
-    CardImage,
+    UserReusableBlock,
   },
   data() {
     return {
-      checkbox: false,
-      header: 'Introduction',
-      link: 'Get started',
-      content:
-        'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
-      content2:
-        'In the eighteenth century the German philosopher Immanuel Kant developed a ',
-      introduction: 'Introduction',
-      notes:
-        'In the eighteenth century the German philosopher Immanuel Kant developed a theoryorganizing experience ',
-      title: 'Basics',
+      documentation: [],
+      pageSection: [],
+      title: '',
     }
+  },
+  mounted() {
+    this.getPage()
+  },
+  methods: {
+    async getPage() {
+      const pageSectionRes = await this.$axios.get(
+        'https://robin-doc.herokuapp.com/api/v1/page/63161ddfe6b8691a7df2878b'
+      );
+      console.log(pageSectionRes.data.data.page_sections);
+      this.pageSection = pageSectionRes.data.data.page_sections;
+    },
   },
 }
 </script>
