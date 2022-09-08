@@ -1,45 +1,24 @@
 <template>
   <div class="container">
-    <div class="header" >
-      <!-- <h2>{{ title }}</h2> -->
-      <h2>{{componentDetails.title}}</h2>
-      <p>
-        {{componentDetails.content}}
-      </p>
+    <div class="header">
+      <h1>{{ title }}Introduction</h1>
+      <h3>{{ componentDetails.title }}</h3>
+      <p v-html="componentDetails.content"></p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props:{
-    componentDetails:{
-      type: Object
-    }
+  props: {
+    componentDetails: {
+      type: Object,
+    },
   },
   data() {
     return {
-      documentation: [],
-      pageSection: [],
       title: '',
     }
-  },
-
-  created() {
-    // this.getPage()
-  },
-
-  methods: {
-    // async getPage() {
-    //   const response = await this.$axios.get(
-    //     'https://robin-doc.herokuapp.com/api/v1/page/63161ddfe6b8691a7df2878b'
-    //   )
-    //   console.log(response.data)
-    //   console.log(response.data.data.title)
-    //   this.title = response.data.data.title
-    //   console.log(response.data.data.page_sections)
-    //   this.pageSection = response.data.data.page_sections
-    // },
   },
 }
 </script>

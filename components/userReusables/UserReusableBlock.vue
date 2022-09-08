@@ -2,7 +2,6 @@
   <div
     class="reusable-block-container"
     @keydown.enter="enterPressed"
-    @click="updateIndex"
   >
     <UserText
       v-show="blockDisplayed == 'Text'"
@@ -47,12 +46,12 @@ export default {
   data() {
     return {
       showModal: false,
-      blockDisplayed: 'Text',
+      blockDisplayed: '',
     }
   },
-  //   mounted() {
-  //     this.blockDisplayed = sectionProp.title
-  //   },
+    mounted() {
+      this.blockDisplayed = this.sectionProp.title
+    },
 }
 </script>
 
