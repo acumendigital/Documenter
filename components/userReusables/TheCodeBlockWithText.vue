@@ -67,6 +67,7 @@ export default {
 <style scoped>
 .container {
   position: relative;
+  margin: 20px 0;
 }
 .copy {
   position: absolute;

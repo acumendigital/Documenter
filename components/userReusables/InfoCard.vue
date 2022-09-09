@@ -32,7 +32,7 @@ export default {
 <style scoped>
 .container {
   position: relative;
-  background: red;
+  margin: 20px 0;
 }
 .note {
   background: #dbe4ff;

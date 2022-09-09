@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-   <div class="statusTable">
+    <div class="statusTable">
       <div class="table-container">
         <table>
           <tr>
@@ -80,6 +80,9 @@ export default {
 }
 </script>
 <style scoped>
+.container {
+  margin: 20px 0;
+}
 .table-container {
   width: 788px;
   height: 412px;
@@ -112,5 +115,4 @@ table {
   line-height: 24px;
   color: #51545c;
 }
-
 </style>

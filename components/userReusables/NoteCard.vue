@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <div class="introNote">
+    <div class="introNote">
       <img src="~/assets/images/alarm.svg" />
       <p>
         NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -8,29 +8,22 @@
         molestias excepturi sint
       </p>
     </div>
-    
-    
   </div>
 </template>
 
 <script>
-
 export default {
   data() {
-    return {
-     
-    }
+    return {}
   },
- 
-  methods: {
-   
-  },
+
+  methods: {},
 }
 </script>
 <style scoped>
 .container {
   position: relative;
-  background: red;
+  margin: 20px 0;
 }
 .introNote {
   background: #efefef;
@@ -51,5 +44,4 @@ export default {
   width: 704px;
   padding-left: 16px;
 }
-
 </style>

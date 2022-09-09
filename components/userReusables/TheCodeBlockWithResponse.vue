@@ -60,6 +60,9 @@ export default {
 }
 </script>
 <style scoped>
+.container {
+  margin: 20px 0;
+}
 .codeContent {
   width: 735px;
 }

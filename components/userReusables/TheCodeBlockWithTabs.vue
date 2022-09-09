@@ -1,22 +1,24 @@
 <template>
-  <div class="tabs-code-block-container">
-    <div class="tabs-code-block">
-      <div class="tabs-container">
-        <ul ref="tabList">
-          <li
-            @click="isClicked"
-            v-for="(tabs, index) in tabList"
-            :key="index"
-            ref="tab"
-          >
-            {{ tabs }}
-          </li>
-        </ul>
-      </div>
-      <div class="code-block">
-        <div class="code-block-img">
-          <div class="codeContent">
-            <textarea v-model="cancel" ref="syntaxTab"></textarea>
+  <div class="container">
+    <div class="tabs-code-block-container">
+      <div class="tabs-code-block">
+        <div class="tabs-container">
+          <ul ref="tabList">
+            <li
+              @click="isClicked"
+              v-for="(tabs, index) in tabList"
+              :key="index"
+              ref="tab"
+            >
+              {{ tabs }}
+            </li>
+          </ul>
+        </div>
+        <div class="code-block">
+          <div class="code-block-img">
+            <div class="codeContent">
+              <textarea v-model="cancel" ref="syntaxTab"></textarea>
+            </div>
           </div>
         </div>
       </div>
@@ -84,46 +86,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabs-code-block-container {
-  background: #fbfbfb;
-  border: 1px solid #efefef;
-  border-radius: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  .tabs-code-block {
-    .tabs-container {
-      ul {
-        @include flex-center;
-        justify-content: flex-start;
-        gap: 32px;
-        padding-left: 8px;
-        margin-top: 0px;
-        margin-bottom: 18px;
-        border-bottom: 1px solid #efefef;
-        padding: 16px 37px 0px 24px;
-        li {
-          list-style-type: none;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 24px;
-          color: #8d9091;
-          padding-bottom: 8px;
-          cursor: pointer;
-        }
-        .active {
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 24px;
-          color: #071439;
-          border-bottom: 2px solid #4568d1;
+.conatiner {
+  margin: 20px 0;
+
+  .tabs-code-block-container {
+    background: #fbfbfb;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .tabs-code-block {
+      .tabs-container {
+        ul {
+          @include flex-center;
+          justify-content: flex-start;
+          gap: 32px;
+          padding-left: 8px;
+          margin-top: 0px;
+          margin-bottom: 18px;
+          border-bottom: 1px solid #efefef;
+          padding: 16px 37px 0px 24px;
+          li {
+            list-style-type: none;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #8d9091;
+            padding-bottom: 8px;
+            cursor: pointer;
+          }
+          .active {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #071439;
+            border-bottom: 2px solid #4568d1;
+          }
         }
       }
-    }
-    .code-block {
-      padding: 0px 37px 24px 16px;
-      .code-block-img {
-        img {
-          width: 100%;
+      .code-block {
+        padding: 0px 37px 24px 16px;
+        .code-block-img {
+          img {
+            width: 100%;
+          }
         }
       }
     }

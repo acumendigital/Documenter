@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Notes from '../Notes.vue'
+import Notes from '../userReusables/Card.vue'
 import TheCodeBlock from './TheCodeBlock.vue';
 import TheCodeBlockWithTabs from '../userReusables/TheCodeBlockWithTabs.vue';
 import TheDividerComponent from './TheDividerComponent.vue';
