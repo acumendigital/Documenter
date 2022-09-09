@@ -83,11 +83,11 @@ export default {
   padding: 8px;
 }
 .copyMessage {
-   width: 120px;
+  width: 120px;
   background: rgb(13, 14, 13);
 }
-.copyMessage p{
-   font-weight: 400;
+.copyMessage p {
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #fff;
