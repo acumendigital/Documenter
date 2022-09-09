@@ -1,88 +1,87 @@
 <template>
   <div class="container">
-   <div class="table-container">
-        <table>
-          <tr>
-            <th></th>
-            <th>Android SDK</th>
-            <th>Ios SDK</th>
-            <th>React</th>
-            <th>Javascript</th>
-            <th>React native SDK</th>
-          </tr>
-          <tr>
-            <td>Available Country</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Support for bluetooth</td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Support for smart readers</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/fail.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td>Us only</td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-            <td><img src="~/assets/images/tick.svg" /></td>
-          </tr>
-        </table>
-      </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th></th>
+          <th>Android SDK</th>
+          <th>Ios SDK</th>
+          <th>React</th>
+          <th>Javascript</th>
+          <th>React native SDK</th>
+        </tr>
+        <tr>
+          <td>Available Country</td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+        <tr>
+          <td>Support for bluetooth</td>
+          <td><img src="~/assets/images/fail.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/fail.svg" /></td>
+          <td><img src="~/assets/images/fail.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+        <tr>
+          <td>Support for smart readers</td>
+          <td>Us only</td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/fail.svg" /></td>
+          <td><img src="~/assets/images/fail.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td>Us only</td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+          <td><img src="~/assets/images/tick.svg" /></td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  
   data() {
-    return {
-     
-    }
+    return {}
   },
-  
 }
 </script>
 <style scoped>
+.container {
+  margin: 20px 0;
+}
 .table-container {
   width: 788px;
   height: 412px;
@@ -113,5 +112,4 @@ table td {
   line-height: 24px;
   color: #8d9091;
 }
-
 </style>
