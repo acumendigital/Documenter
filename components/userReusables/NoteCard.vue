@@ -2,17 +2,23 @@
   <div class="container">
     <div class="introNote">
       <img src="~/assets/images/alarm.svg" />
-      <p>
+      <!-- <p>
         NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis
         praesentium voluptatum deleniti atque corrupti quos dolores et quas
         molestias excepturi sint
-      </p>
+      </p> -->
+      <p v-html="componentDetails.content"></p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    componentDetails: {
+      type: Object,
+    },
+  },
   data() {
     return {}
   },

@@ -1,19 +1,34 @@
 <template>
-  <div
-    class="reusable-block-container"
-    @keydown.enter="enterPressed"
-  >
+  <div class="reusable-block-container" @keydown.enter="enterPressed">
     <UserText
       v-show="blockDisplayed == 'Text'"
       :componentDetails="sectionProp"
     />
-    <WarningCard v-show="blockDisplayed == 'Warning'" />
-    <NoteCard v-show="blockDisplayed == 'Note'" />
-    <InfoCard v-show="blockDisplayed == 'Info'" />
-    <TheCodeBlockWithText v-show="blockDisplayed == 'Code Block'" />
-    <TheCodeBlockWithTabs v-show="blockDisplayed == 'Code Table'" />
-    <TheCodeBlockWithResponse v-show="blockDisplayed == 'Code & Res'" />
-    <Card v-show="blockDisplayed == 'Card'" />
+    <WarningCard
+      v-show="blockDisplayed == 'Warning'"
+      :componentDetails="sectionProp"
+    />
+    <NoteCard
+      v-show="blockDisplayed == 'Info'"
+      :componentDetails="sectionProp"
+    />
+    <InfoCard
+      v-show="blockDisplayed == 'Note'"
+      :componentDetails="sectionProp"
+    />
+    <TheCodeBlockWithText
+      v-show="blockDisplayed == 'Code Block'"
+      :componentDetails="sectionProp"
+    />
+    <TheCodeBlockWithTabs
+      v-show="blockDisplayed == 'Code Table'"
+      :componentDetails="sectionProp"
+    />
+    <TheCodeBlockWithResponse
+      v-show="blockDisplayed == 'Code & Res'"
+      :componentDetails="sectionProp"
+    />
+    <Card v-show="blockDisplayed == 'Card'" :componentDetails="sectionProp" />
   </div>
 </template>
 
@@ -49,9 +64,9 @@ export default {
       blockDisplayed: '',
     }
   },
-    mounted() {
-      this.blockDisplayed = this.sectionProp.title
-    },
+  mounted() {
+    this.blockDisplayed = this.sectionProp.title
+  },
 }
 </script>
 
