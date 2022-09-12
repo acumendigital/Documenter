@@ -32,6 +32,7 @@ export default {
 .container {
   position: relative;
   margin: 20px 0;
+  height: auto;
 }
 .note {
   background: #dbe4ff;

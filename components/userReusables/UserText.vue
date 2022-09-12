@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="header">
-      <h1>{{ title }}Introduction</h1>
-      <h3>{{ componentDetails.title }}</h3>
+      <h1>{{ title }}</h1>
+      <!-- <h3>{{ componentDetails.title }}</h3> -->
       <p v-html="componentDetails.content"></p>
     </div>
   </div>

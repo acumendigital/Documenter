@@ -24,7 +24,7 @@ export default {
 </script>
 <style scoped>
 .container {
-  height: 254px;
+  height: auto;
   margin-right: 24px;
   margin-top: 32px;
 }
@@ -32,8 +32,6 @@ export default {
   margin-bottom: 0 !important;
 }
 .content {
-  /* width: 236px; */
-  /* height: 132px; */
   background: #fbfbfb;
   border: 1px solid #9999bc;
   border-radius: 8px;

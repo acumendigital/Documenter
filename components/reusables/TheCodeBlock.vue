@@ -38,6 +38,5 @@ export default {
   height: auto;
   border-radius: 8px;
   padding: 16px;
-  /* border: 2px solid red; */
 }
 </style>
