@@ -20,13 +20,10 @@
 </template>
 
 <script>
-import Notes from '../Notes.vue'
 import AdminCodeblockWithResponse from './AdminCodeblockWithResponse.vue';
 import AdminCodeBlockWithTabs from './AdminCodeBlockWithTabs.vue';
 import TheCard from './TheCard.vue';
 import TheCodeBlock from './TheCodeBlock.vue';
-import TheCodeBlockWithResponse from './TheCodeBlockWithResponse.vue';
-import TheCodeBlockWithTabs from './TheCodeBlockWithTabs.vue';
 import TheDividerComponent from './TheDividerComponent.vue';
 import TheInfoCard from './TheInfoCard.vue';
 import TheNormalText from './TheNormalText.vue';
@@ -34,7 +31,7 @@ import TheNotesContainer from './TheNotesContainer.vue';
 import ThePageTitleBlock from './ThePageTitleBlock.vue'
 import TheWarningCard from './TheWarningCard.vue';
 export default {
-    components: { ThePageTitleBlock, Notes, TheNormalText, TheCodeBlockWithTabs, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock, TheCodeBlockWithResponse, AdminCodeblockWithResponse, TheCard, AdminCodeBlockWithTabs },
+    components: { ThePageTitleBlock, TheNormalText, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock, TheCodeBlockWithResponse, AdminCodeblockWithResponse, TheCard, AdminCodeBlockWithTabs },
     props:{
         blockType:{
             type: String,
