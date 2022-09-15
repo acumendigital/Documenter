@@ -6,7 +6,14 @@
 
 <script>
 export default {
-
+  props:{
+    index: Number
+  },
+  data(){
+    return{
+      blockType: 'Divider',
+    }
+  },
 }
 </script>
 
