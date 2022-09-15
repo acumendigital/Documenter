@@ -33,11 +33,10 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 .CodeMirror {
   height: auto;
   border-radius: 8px;
   padding: 16px;
-  /* border: 2px solid red; */
 }
 </style>

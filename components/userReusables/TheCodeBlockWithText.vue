@@ -4,7 +4,7 @@
       <img src="~/assets/images/copyToClipboard.svg" />
     </div>
     <div class="codeContent kemi">
-      <textarea v-model="codeContent" ref="syntax"></textarea>
+      <textarea v-model="componentDetails.content" ref="syntax"></textarea>
     </div>
     <div class="copyMessage" v-if="codeCopied">
       <p>Copied</p>
@@ -18,28 +18,33 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 export default {
+  props: {
+    componentDetails: {
+      type: Object,
+    },
+  },
   data() {
     return {
-      codeContent:
-        '  // \n // \n\n import syntaxHighlight from "syntax-highlight" \n \n const codeBlock = document.querySelector("#code") \n\n function highlight(code) {\n   return syntaxHighlight(code)\n } \n \n export const Highlighter = () => { \n   return(\n    <button onClick={highlight}>Highlight</button> \n   ) \n }',
+      codeContent: '',
       codeMirrorInstance: '',
       codeCopied: false,
     }
   },
   mounted() {
     this.codeMirrorInstance = CodeMirror.fromTextArea(this.$refs.syntax, {
-      lineNumbers: true,
       theme: 'dracula',
       mode: 'javascript',
       autoRefresh: true,
-      firstLineNumber: 1,
-      lineNumbers: true,
+      // firstLineNumber: 1,
+      // lineNumbers: true,
       smartIndent: true,
       lineWrapping: true,
       indentWithTabs: true,
       refresh: true,
       readOnly: 'true',
     })
+    this.codeContent = this.componentDetails.content
+    // this.codeMirrorInstance.getDoc().setValue(this.componentDetails.content)
   },
   methods: {
     copyToClipboard() {
@@ -83,11 +88,11 @@ export default {
   padding: 8px;
 }
 .copyMessage {
-   width: 120px;
+  width: 120px;
   background: rgb(13, 14, 13);
 }
-.copyMessage p{
-   font-weight: 400;
+.copyMessage p {
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #fff;

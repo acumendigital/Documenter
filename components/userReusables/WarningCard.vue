@@ -1,31 +1,32 @@
 <template>
   <div class="container">
-      <div class="beware">
-        <img src="~/assets/images/danger.svg" />
-        <p>
-          BEWARE - s et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem
-        </p>
-      </div>
-    
+    <div class="beware">
+      <img src="~/assets/images/danger.svg" />
+      <p>
+        BEWARE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis
+        praesentium voluptatum deleniti atque corrupti quos dolores et quas
+        molestias excepturi sint occaecati cupiditate non provident, similique
+        sunt in culpa qui officia deserunt mollitia animi, id est laborum et
+        dolorum fuga. Et harum quidem
+      </p> -->
+      <h3>{{ componentDetails.title }}</h3>
+      <p v-html="componentDetails.content"></p>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
+  props: {
+    componentDetails: {
+      type: Object,
+    },
+  },
   data() {
-    return {
-     
-    }
+    return {}
   },
- 
-  methods: {
-   
-  },
+
+  methods: {},
 }
 </script>
 <style scoped>
@@ -50,5 +51,4 @@ export default {
   width: 704px;
   padding-left: 16px;
 }
-
 </style>
