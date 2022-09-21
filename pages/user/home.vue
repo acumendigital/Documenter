@@ -63,7 +63,7 @@
       <TheCodeBlockWithTabs />
     </div>
     <div class="code">
-      <div class="res"><TheCodeBlockWithResponse /></div>
+      <div class="res"><TheCodeBlockWithResponse :userScreen="true" /></div>
     </div>
     <div class="line"></div>
     <div class="bulb">

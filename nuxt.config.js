@@ -25,8 +25,13 @@ export default {
     scss: ['~/assets/css/main.scss'],
   },
 
+  env: {
+    NPM_CONFIG_PRODUCTION: process.env.NPM_CONFIG_PRODUCTION,
+    PAGE_ID: process.env.PAGE_ID,
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/vuex-persist', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -48,7 +53,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'https://robin-doc.herokuapp.com/api/v1',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

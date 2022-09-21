@@ -23,21 +23,31 @@ export default {
     components:{
         quillEditor
     },
+    props:{
+        index: {
+            type: Number,
+        }
+    },
     data(){
         return{
-            content: "",
+            content: this.$store.state.blockProperty[this.index].content,
             editorOption: {
                     theme: 'bubble',
                     bounds: '#edit-quill',
                     placeholder: "+   Press O for options",
                 },
+                blockType: 'Text'
         }
     },
     mounted(){
         this.onEditorReady(this.$refs.quill.quill);
         this.$emit('update-block-index');
+        // this.content = blockContent(this.index);
     },
     methods:{
+        updateStoreIndex(){
+        this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}})
+    },
         onEditorBlur(quill){
             quill.blur();
             this.editing = false;
@@ -46,21 +56,25 @@ export default {
         // This helps to call the focus method after the view has been rendered on the screen.
             setTimeout(() => { 
                 quill.focus();
-                console.log('I suppose run');
-            }, 100);
+            }, 250);
             this.editing = true;
-            console.log("Quill is ready", this.$refs.quill, quill);
       },
       showOptions(){
         if(this.content == '<p>o</p>' || this.content == '<p>O</p>'){
             this.$emit('show-options')
-            console.log("O was pressed");
         }
         else{
             this.$emit('hide-options');
         }
+        this.updateStoreIndex();
+        console.log("I should run");
       }
-    }
+    },
+    // computed:{
+    //     blockContent(){
+    //         return this.$store.getters.blockContent;
+    //     }
+    // }
 }
 </script>
 
