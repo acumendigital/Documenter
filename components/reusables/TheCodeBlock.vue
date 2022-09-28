@@ -6,6 +6,7 @@
       ref="codeBlock"
       cols="30"
       rows="5"
+      v-model="codeMirrorContent"
     ></textarea>
   </div>
 </template>
@@ -16,10 +17,17 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 export default {
+  props:{
+    index: {
+      type: Number
+    }
+  },
   data() {
     return {
       code: '',
       codeMirrorInstance: '',
+      blockType: 'Code Block',
+      codeMirrorContent: this.$store.state.blockProperty[this.index].content
     }
   },
   mounted() {
@@ -29,15 +37,26 @@ export default {
       mode: 'javascript',
       autocompletion: true,
     })
+    this.codeMirrorInstance.on('change', this.updateCodemirrorContent);
+    // this.codeMirrorInstance.getDoc().setValue(this.$store.state.blockProperty[this.index].content)
+
   },
+  methods:{
+    updateCodemirrorContent(){
+        this.codeMirrorContent = this.codeMirrorInstance.getValue();
+        this.updateStoreIndex();
+    },
+    updateStoreIndex(){
+        this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.codeMirrorContent, note: "", order: `${this.index}`}})
+    },
+  }
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 .CodeMirror {
   height: auto;
   border-radius: 8px;
   padding: 16px;
-  /* border: 2px solid red; */
 }
 </style>

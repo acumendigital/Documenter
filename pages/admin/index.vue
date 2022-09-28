@@ -5,9 +5,9 @@
         @enter-pressed="increaseBlocks" 
         @show-options="showOptionsModal" 
         @hide-options="hideOptionsModal" 
-        v-for="(block, index) in blockProperty" 
+        v-for="(block, index) in blockPropertyHandler" 
         :key="index" 
-        :blockType="block.blockType"
+        :blockType="block.title"
         :index="index"
         @update-block-index="updateBlockIndex(index)"
     />
@@ -35,9 +35,10 @@ export default {
     layout: 'AdminLayout',
     data(){
         return{
-            noOfBlocks: 1,
+            blockId: 0,
             blockProperty: [
                 // {id: 1, blockType: 'Text'},
+
             ],
             showModal: false,
             blockLists: [
@@ -60,8 +61,9 @@ export default {
     methods:{
         // This function increases the reusable block components on the editing screen
         increaseBlocks(){
-            let newBlock = {id: this.noOfBlocks++, blockType: 'Text'};
+            let newBlock = {title: `Text ${this.currentBlockIndex++}`, content: "", note: "", order: `${this.blockId}`};
             this.blockProperty.push(newBlock);
+            this.$store.commit("addBlockProperty", newBlock);
         },
         // Function triggered when the parent component receives the show-options event
         showOptionsModal(){
@@ -77,18 +79,28 @@ export default {
         // Function triggered when an option is clicked on the options modal
         blockToDisplay(block){
             this.blockDisplayed = block;
-            this.blockProperty[this.currentBlockIndex].blockType = block; 
+            // this.blockProperty[this.currentBlockIndex].title = block; 
+            this.showModal = false;
+            this.$store.commit('setBlockProperty', { index: this.currentBlockIndex, blockState: {title: `${block} ${this.currentBlockIndex}`, content: "", note: "", order: `${this.blockId}`} });
         }
     },
     computed:{
         newBlockHandler(){
             return this.blockDisplayed;
+        },
+        blockPropertyHandler(){
+            return this.$store.state.blockProperty;
         }
     }
 }
 </script>
 
 <style lang="scss">
+.admin-editable-area{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
     .block-modal-container{
         top: 64px;
         left: 0;

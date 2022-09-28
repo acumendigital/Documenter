@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import home from './user/home.vue';
+import index from './user/index.vue';
 // import VueQuillEditor from 'quill-vuejs';
 
 // import 'quill/dist/quill.core.css' // import styles
@@ -12,7 +12,7 @@ import home from './user/home.vue';
 
 // Vue.use(VueQuillEditor, {theme: 'snow'})
 export default {
-  components: { home },
+  components: { index },
   name: 'IndexPage'
 }
 </script>

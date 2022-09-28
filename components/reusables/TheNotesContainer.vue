@@ -31,30 +31,47 @@ export default {
     components:{
         quillEditor
     },
+    props:{
+        index: {
+            type: Number
+        }
+    },
     data(){
         return{
-            content: "",
+            content: this.$store.state.blockProperty[this.index].content,
             editorOption: {
                     theme: 'bubble',
                     bounds: '#edit-quill',
                     placeholder: "NOTE - s et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem ",
                 },
-                editing: false
+                editing: false,
+                blockType: 'Note'
+        }
+    },
+    mounted(){
+        if(this.content === ""){
+            this.editing = false;
+        } else {
+            this.editing = true;
         }
     },
     methods:{
-        onEditorBlur(quill){
-            quill.blur();
-            if(this.content === ""){
-                this.editing = false;
-            }
-      },
+        updateStoreIndex(){
+        this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: this.blockType, content: this.content, note: ""}})
+    },
+    onEditorBlur(quill){
+        quill.blur();
+        if(this.content === ""){
+            this.editing = false;
+        }
+    },
       onEditorChange(){
         if(this.content == ""){
             this.editing = false;
         } else {
             this.editing = true;
         }
+        this.updateStoreIndex();
         console.log("Typing...");
       },
       showOptions(){

@@ -2,14 +2,38 @@
   <div class="main-container">
     <div class="button-links">
       <button class="save">Save</button>
-      <button class="publish">Publish</button>
+      <button class="publish" @click="onPublish">Publish</button>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'AdminHeader'
+    name:'AdminHeader',
+    methods:{
+      async onPublish() {
+        let uniqueId = new Set(this.$store.state.pageSectionRes);
+        let requestArrays = this.$store.state.blockProperty.map(async pageSection => {
+          console.log(uniqueId.has(pageSection.title.replace( /\D*/, '')));
+          if(!uniqueId.has(pageSection.title.replace( /\D*/, ''))){
+            try {
+                var addPageSectionsRes = await this.$axios({
+                method: 'POST',
+                url: `/page_section/${process.env.PAGE_ID}`,
+                data: pageSection
+              })
+              console.log(addPageSectionsRes);
+              this.$store.commit('addPageSection', addPageSectionsRes.data.data.title.replace( /\D*/, ''));
+            } catch (error) {
+              console.log(error);
+            }
+          }
+        })
+
+        
+        // Regex to get only digit .replace( /\D*/, '')
+      },
+    }
   }
 </script>
 
