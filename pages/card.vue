@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <div class="container">
       <div class="content">
         <h3>
@@ -8,7 +8,6 @@
                 :options="editorOption"
                 @blur="onEditorBlur($event)"
                 @ready="onEditorReady($event)"
-                @change="onEditorChange($event)"
                 ref="quill"
         />
         </h3>
@@ -18,11 +17,16 @@
                 :options="contentEditorOption"
                 @blur="onEditorBlur($event)"
                 @ready="onEditorReady($event)"
-                @change="onEditorChange($event)"
                 ref="subquill"
         />
         </p>
       </div>
+    </div>
+    <div class="second-container">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 40H60" stroke="#4568D1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M40 60V20" stroke="#4568D1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </div>
 </template>
@@ -35,18 +39,13 @@ import { quillEditor } from 'vue-quill-editor'
 
 export default {
   name: 'Introduction',
-  props:{
-    index: {
-      type: Number
-    }
-  },
   components:{
     quillEditor
   },
   data(){
     return{
-        content: this.$store.state.blockProperty[this.index].content,
-        subcontent:this.$store.state.blockProperty[this.index].note,
+        content: '',
+        subcontent:'',
         editorOption: {
             theme: 'bubble',
             placeholder: "Write your card title here",
@@ -56,13 +55,9 @@ export default {
             placeholder: "Write your card content here",
         },
         editing: false,
-        blockType: 'Card'
     }
   },
   methods:{
-    updateStoreIndex(){
-        this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.content, note: this.subcontent, order: `${this.index}`}})
-    },
     onEditorBlur(quill){
         quill.blur();
         this.editing = false;
@@ -74,17 +69,31 @@ export default {
         }, 250);
         this.editing = true;
       },
-      onEditorChange(quill){
-        this.updateStoreIndex()
-      }
   }
 }
 </script>
 <style scoped>
+.main-container{
+  display: flex;
+  /* align-items: center; */
+  column-gap: 1.5rem;
+}
 .container {
   margin-right: 24px;
   margin-top: 32px;
   width: 236px;
+}
+.second-container{
+  width: 236px;
+  height: 132px;
+  border: 1px solid #9999BC;
+  background-color: #FBFBFB;
+  border-radius: 8px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 .image img {
   margin-bottom: 0 !important;
@@ -110,4 +119,5 @@ export default {
   line-height: 24px;
   color: #8d9091;
 }
+
 </style>
