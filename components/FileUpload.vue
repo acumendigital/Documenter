@@ -2,7 +2,11 @@
   <div>
     <div class="first-container">
       <div class="first-section">
-        <img v-if="ImageURL" :src="ImageURL" alt="">
+        <div v-if="ImageURL">
+          <div v-for="image in images" :key="image">
+            <img :src="image" alt="">
+          </div>
+        </div>
         <label v-else class="file-upload" for="file">Upload file</label>
         <input ref="image" @input="ImageUpload" type="file" id="file" accept="image/*">        
           <!-- <button class="file-upload">Upload file</button> -->
@@ -20,7 +24,8 @@
     data(){
       return {
         Image: null,
-        ImageURL: null
+        ImageURL: null,
+        images: []
       }
     },
     methods: {
@@ -30,6 +35,7 @@
         ImageUpload(e){
           this.Image = e.target.files[0]
           this.ImageURL = URL.createObjectURL(this.Image)
+          this.images.push(this.ImageURL)
         }
     }
   }
