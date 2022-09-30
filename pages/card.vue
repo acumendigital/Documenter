@@ -75,7 +75,6 @@ export default {
 <style scoped>
 .main-container{
   display: flex;
-  /* align-items: center; */
   column-gap: 1.5rem;
 }
 .container {
@@ -95,14 +94,9 @@ export default {
   align-items: center;
   
 }
-.image img {
-  margin-bottom: 0 !important;
-}
 .content {
-  /* width: 236px; */
-  /* height: 132px; */
   background: #fbfbfb;
- border: 1px solid #9999bc;
+  border: 1px solid #9999bc;
   border-radius: 8px;
   padding: 16px;
 }

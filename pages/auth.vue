@@ -31,7 +31,7 @@
 
 <style scoped>
 .background{
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
 }
 .lhs{
@@ -112,7 +112,7 @@ input{
   border-radius: 8px;
   font-weight: 400;
   line-height: 24px;
-  font-size: 14px;
+  font-size: .8rem;
   color: #FFF;
   text-align: center;
   border: none;
