@@ -31,7 +31,7 @@ import TheNotesContainer from './TheNotesContainer.vue';
 import ThePageTitleBlock from './ThePageTitleBlock.vue'
 import TheWarningCard from './TheWarningCard.vue';
 export default {
-    components: { ThePageTitleBlock, TheNormalText, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock, TheCodeBlockWithResponse, AdminCodeblockWithResponse, TheCard, AdminCodeBlockWithTabs },
+    components: { ThePageTitleBlock, TheNormalText, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock, AdminCodeblockWithResponse, TheCard, AdminCodeBlockWithTabs },
     props:{
         blockType:{
             type: String,

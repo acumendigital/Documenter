@@ -1,4 +1,47 @@
-@font-face {
+* {
+  font-family: 'Google Sans', sans-serif;
+   font-size: 16px;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   border-style: none;
+   border: none;
+ }
+ body{
+   width: 100%;
+   font-style: normal;
+   color: #51545C;
+   background-color: #fff;
+ }
+ a {
+   text-decoration: none;
+ }
+ 
+ ul {
+   list-style: none;
+ }
+ 
+ i,
+ a,
+ button {
+   cursor: pointer;
+ }
+ @font-face {
+   font-family: "DM Sans Bold";
+   src: url("../fonts/DMSans-Bold.ttf"); 
+   src: url("../fonts/DMSans-Bold.ttf") format("embedded-opentype"),
+   url("../fonts/DMSans-Bold.ttf") format("truetype");
+   font-weight: 700;
+ }
+ 
+ @font-face {
+   font-family: "DM Sans Regular";
+   src: url("../fonts/DMSans-Regular.ttf"); 
+   src: url("../fonts/DMSans-Regular.ttf") format("embedded-opentype"),
+   url("../fonts/DMSans-Regular.ttf") format("truetype");
+   font-weight: 400;
+ }
+ @font-face {
     font-family: "HankenSans Regular";
     src: url("../fonts/HankenSans-Regular.otf");
     src: url("../fonts/HankenSans-Regular.otf") format("embedded-opentype"),
