@@ -24,6 +24,7 @@
               })
               console.log(addPageSectionsRes);
               this.$store.commit('addPageSection', addPageSectionsRes.data.data.title.replace( /\D*/, ''));
+              this.$store.commit('addMinPageSectionRes', {id: addPageSectionsRes.data.data.title.replace( /\D*/, ''), pageSectionId: addPageSectionsRes.data.data._id})
             } catch (error) {
               console.log(error);
             }

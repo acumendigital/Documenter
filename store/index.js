@@ -19,6 +19,7 @@ export const plugins = getPlugins()
 export const state = () => ({
   blockProperty: [],
   pageSectionRes: [],
+  minPageSectionRes: [],
 })
 
 export const mutations = {
@@ -27,7 +28,6 @@ export const mutations = {
   },
   setBlockProperty(state, block) {
     state.blockProperty[block.index] = block.blockState
-    console.log(block)
   },
   setCodeBlockResponsebyIndex(state, response) {
     state.blockProperty[response.index].note = response.responseContent
@@ -35,12 +35,11 @@ export const mutations = {
   addPageSection(state, pageSection) {
     state.pageSectionRes.push(pageSection)
   },
-}
-
-export const actions = {
-  getPresenceInSet({ state }, id) {
-    return state.pageSectionRes.has(id)
+  addMinPageSectionRes(state, minPageSection) {
+    state.minPageSectionRes.push(minPageSection)
   },
 }
+
+export const actions = {}
 
 export const getter = {}
