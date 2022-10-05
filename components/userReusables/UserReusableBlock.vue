@@ -1,34 +1,34 @@
 <template>
   <div class="reusable-block-container" @keydown.enter="enterPressed">
     <UserText
-      v-show="blockDisplayed == 'Text'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Text'"
       :componentDetails="sectionProp"
     />
     <WarningCard
-      v-show="blockDisplayed == 'Warning'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Warning'"
       :componentDetails="sectionProp"
     />
     <NoteCard
-      v-show="blockDisplayed == 'Info'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Info'"
       :componentDetails="sectionProp"
     />
     <InfoCard
-      v-show="blockDisplayed == 'Note'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Note'"
       :componentDetails="sectionProp"
     />
     <TheCodeBlockWithText
-      v-show="blockDisplayed == 'Code Block'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code Block'"
       :componentDetails="sectionProp"
     />
     <TheCodeBlockWithTabs
-      v-show="blockDisplayed == 'Code Table'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code Table'"
       :componentDetails="sectionProp"
     />
     <TheCodeBlockWithResponse
-      v-show="blockDisplayed == 'Code & Res'"
+      v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code & Res'"
       :componentDetails="sectionProp"
     />
-    <Card v-show="blockDisplayed == 'Card'" :componentDetails="sectionProp" />
+    <Card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Card'" :componentDetails="sectionProp" />
   </div>
 </template>
 

@@ -9,6 +9,7 @@
                 @blur="onEditorBlur($event)"
                 @ready="onEditorReady($event)"
                 @change="onEditorChange($event)"
+                @focus="onEditorFocus($event)"
                 ref="quill"
         />
         </h3>
@@ -19,6 +20,7 @@
                 @blur="onEditorBlur($event)"
                 @ready="onEditorReady($event)"
                 @change="onEditorChange($event)"
+                @focus="onEditorFocus($event)"
                 ref="subquill"
         />
         </p>
@@ -65,18 +67,29 @@ export default {
     },
     onEditorBlur(quill){
         quill.blur();
-        this.editing = false;
+        this.onEditBlock();
+        this.$emit('update-edit', false)
     },
     onEditorReady(quill){
-        // This helps to call the focus method after the view has been rendered on the screen.
-        setTimeout(() => { 
-            quill.focus();
-        }, 250);
-        this.editing = true;
-      },
-      onEditorChange(quill){
-        this.updateStoreIndex()
-      }
+      // This helps to call the focus method after the view has been rendered on the screen.
+      setTimeout(() => { 
+          quill.focus();
+      }, 250);
+      this.$emit('update-edit', true)
+    },
+    onEditorChange(quill){
+      this.updateStoreIndex()
+      this.$emit('update-edit', true)
+    },
+    onEditorFocus(){
+      this.$emit('update-edit', true)
+    },
+    async onEditBlock(){
+      let reqArray = this.$store.state.minPageSectionRes
+      reqArray = reqArray.filter(res => res.id == this.index)
+      let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}) : null
+      console.log(reqArrayRes);
+    },
   }
 }
 </script>

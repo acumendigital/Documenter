@@ -35,9 +35,18 @@ export default {
       indentWithTabs: true,
       refresh: true,
     })
-    this.codeMirrorInstance.on('change', this.updateCodemirrorContent)
+    this.codeMirrorInstance.on('change', this.updateCodemirrorContent);
+    this.codeMirrorInstance.on('blur', () => {
+      this.onEditBlock();
+    });
   },
   methods:{
+    async onEditBlock(){
+        let reqArray = this.$store.state.minPageSectionRes
+        reqArray = reqArray.filter(res => res.id == this.index)
+        let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {note: this.content}) : null
+        console.log(reqArrayRes);
+      },
     updateCodemirrorContent(){
         this.content = this.codeMirrorInstance.getValue();
         this.updateStoreIndex();

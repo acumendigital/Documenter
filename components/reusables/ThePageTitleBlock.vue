@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss">
     .editor{
-        border: 1px dashed #CCCCCC;
+        border: 2px dashed #EFEFEF;
         border-radius: 8px;
         padding-left: 32px;
         width: 632px;

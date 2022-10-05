@@ -7,6 +7,7 @@
             @blur="onEditorBlur($event)"
             @change="showOptions"
             @ready="onEditorReady($event)"
+            @focus="onEditorFocus($event)"
             ref="quill"
         />
     </div>
@@ -47,17 +48,24 @@ export default {
     methods:{
         updateStoreIndex(){
         this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}})
-    },
+      },
         onEditorBlur(quill){
             quill.blur();
-            this.editing = false;
+            this.$emit('update-edit', false)
+            this.onEditBlock();
+      },
+      async onEditBlock(){
+        let reqArray = this.$store.state.minPageSectionRes
+        reqArray = reqArray.filter(res => res.id == this.index)
+        let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}) : null
+        console.log(reqArrayRes);
       },
       onEditorReady(quill){
         // This helps to call the focus method after the view has been rendered on the screen.
             setTimeout(() => { 
                 quill.focus();
             }, 250);
-            this.editing = true;
+            this.$emit('update-edit', true)
       },
       showOptions(){
         if(this.content == '<p>o</p>' || this.content == '<p>O</p>'){
@@ -66,8 +74,11 @@ export default {
         else{
             this.$emit('hide-options');
         }
+        this.$emit('update-edit', true)
         this.updateStoreIndex();
-        console.log("I should run");
+      },
+      onEditorFocus(){
+        this.$emit('update-edit', true)
       }
     },
     // computed:{
