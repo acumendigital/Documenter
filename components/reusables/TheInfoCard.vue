@@ -13,6 +13,7 @@
                 :options="editorOption"
                 @blur="onEditorBlur($event)"
                 @change="showOptions"
+                @focus="onEditorFocus($event)"
             />
         </div>
     </div>
@@ -60,14 +61,25 @@ export default {
         onEditorBlur(quill){
             quill.blur();
             if(this.content == ""){
-                this.editing = false;
+                this.editing = false
             }
+            this.$emit('update-edit', false)
+            this.onEditBlock();
+      },
+      async onEditBlock(){
+        let reqArray = this.$store.state.minPageSectionRes
+        reqArray = reqArray.filter(res => res.id == this.index)
+        let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}) : null
+        console.log(reqArrayRes);
       },
       onEditorChange(){
         if(this.content == ""){
-            this.editing = false;
+            this.editing = false
+            this.$emit('update-edit', false)
         } else {
-            this.editing = true;
+            this.editing = true
+            this.$emit('update-edit', true)
+
         }
         this.updateStoreIndex();
         console.log("Typing...");
@@ -81,6 +93,10 @@ export default {
         else{
             this.$emit('hide-options');
         }
+      },
+      onEditorFocus(){
+        this.editing = true
+        this.$emit('update-edit', true)
       }
     }
 }

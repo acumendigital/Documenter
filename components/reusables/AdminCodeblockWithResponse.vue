@@ -27,7 +27,9 @@ import 'codemirror/addon/display/placeholder.js'
 import AdminResponseBlock from './AdminResponseBlock.vue'
 export default {
   props:{
-    index: Number
+    index: {
+      type: Number
+    }
   },
   components: {
     AdminResponseBlock,
@@ -53,18 +55,30 @@ export default {
   mounted() {
     this.codeMirrorInstance = CodeMirror.fromTextArea(this.$refs.syntax, this.codemirrorOptions)
     this.codeMirrorInstance.on('change', this.updateCodemirrorContent)
+    this.codeMirrorInstance.on('blur', () =>{
+       this.$emit('update-edit', false)
+       this.onEditBlock();
+       });
+    this.codeMirrorInstance.on('focus', () => this.$emit('update-edit', true));
   },
   methods: {
+    async onEditBlock(){
+        let reqArray = this.$store.state.minPageSectionRes
+        reqArray = reqArray.filter(res => res.id == this.index)
+        let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}) : null
+        console.log(reqArrayRes);
+      },
     toggleCheckbox() {
       this.checkbox = !this.checkbox
       this.$emit('setCheckboxVal', this.checkbox)
     },
     updateCodemirrorContent(){
         this.content = this.codeMirrorInstance.getValue();
-        this.updateStoreIndex;
+        this.$emit('update-edit', true)
+        this.updateStoreIndex();
     },
     updateStoreIndex(){
-        this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: this.blockType, content: this.content, note: ""}})
+        this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}})
     }
   },
 }

@@ -61,7 +61,8 @@ export default {
     methods:{
         // This function increases the reusable block components on the editing screen
         increaseBlocks(){
-            let newBlock = {title: `Text ${this.currentBlockIndex++}`, content: "", note: "", order: `${this.blockId}`};
+            let order = this.$store.state.blockProperty[this.$store.state.blockProperty.length - 1] ? parseInt(this.$store.state.blockProperty[this.$store.state.blockProperty.length - 1].order) + 1 : 0
+            let newBlock = {title: `Text ${order}`, content: "", note: "", order: `${order}`};
             this.blockProperty.push(newBlock);
             this.$store.commit("addBlockProperty", newBlock);
         },

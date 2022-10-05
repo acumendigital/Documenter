@@ -35,20 +35,33 @@ export default {
       // lineNumbers: true,
       theme: 'dracula',
       mode: 'javascript',
+      lineWrapping: true,
       autocompletion: true,
     })
     this.codeMirrorInstance.on('change', this.updateCodemirrorContent);
+    this.codeMirrorInstance.on('blur', () => {
+      this.$emit('update-edit', false)
+      this.onEditBlock(); 
+    });
+    this.codeMirrorInstance.on('focus', () => this.$emit('update-edit', true));
     // this.codeMirrorInstance.getDoc().setValue(this.$store.state.blockProperty[this.index].content)
 
   },
   methods:{
     updateCodemirrorContent(){
         this.codeMirrorContent = this.codeMirrorInstance.getValue();
+        this.$emit('update-edit', true)
         this.updateStoreIndex();
     },
     updateStoreIndex(){
         this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.codeMirrorContent, note: "", order: `${this.index}`}})
     },
+    async onEditBlock(){
+        let reqArray = this.$store.state.minPageSectionRes
+        reqArray = reqArray.filter(res => res.id == this.index)
+        let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {title: `${this.blockType} ${this.index}`, content: this.codeMirrorContent, note: "", order: `${this.index}`}) : null
+        console.log(reqArrayRes);
+      },
   }
 }
 </script>

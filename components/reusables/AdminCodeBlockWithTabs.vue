@@ -34,7 +34,9 @@ import 'codemirror/theme/dracula.css'
 import 'codemirror/mode/javascript/javascript.js'
 export default {
   props:{
-    index: Number
+    index: {
+      type: Number
+    }
   },
   data() {
     return {
@@ -56,8 +58,20 @@ export default {
     // Setting the first tab to active by default
     this.$refs.tab[0].className = 'active'
     this.codeMirrorInstance.on('change', this.updateCodemirrorContent);
+    this.codeMirrorInstance.on('blur', () =>{
+      this.$emit('update-edit', false)
+      this.onEditBlock();
+    });
+    this.codeMirrorInstance.on('focus', () => this.$emit('update-edit', true));
+
   },
   methods: {
+    async onEditBlock(){
+        let reqArray = this.$store.state.minPageSectionRes
+        reqArray = reqArray.filter(res => res.id == this.index)
+        let reqArrayRes = reqArray.length != 0 ? await this.$axios.put(`/page_section/${reqArray[0].pageSectionId}`, {title: `${this.blockType} ${this.index}`, content: this.content, note: "", order: `${this.index}`}) : null
+        console.log(reqArrayRes);
+      },
     isClicked(e) {
       // Removing the active class from all li tabs
       for (let i = 0; i < this.$refs.tab?.length; i++) {
@@ -76,7 +90,8 @@ export default {
     },
     updateCodemirrorContent(){
         this.tabList[this.tabIndex].codeMirrorContent = this.codeMirrorInstance.getValue();
-        this.updateStoreIndex;
+        this.$emit('update-edit', true)
+        this.updateStoreIndex();
     },
     updateStoreIndex(){
         this.$store.commit('setBlockProperty', {index: this.index, blockState:{title: `${this.blockType} ${this.index}`, content: this.codeMirrorContent, note: "", order: `${this.index}`}})
