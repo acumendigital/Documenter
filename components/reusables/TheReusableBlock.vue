@@ -1,21 +1,33 @@
 <template>
-    <div class="reusable-block-container"  @keydown.enter="enterPressed" @click="updateIndex">
+    <div class="reusable-block-container" :class="{ active : editing }"  @keydown.enter="enterPressed" @click="updateIndex">
         <the-normal-text
          @show-options="showOptions" 
          @hide-options="hideOptions" 
-         v-show="blockDisplayed == 'Text'" 
+         @update-edit="updateEdit"
+         v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Text'" 
          @update-block-index="updateIndex"
          :index='index'
         />
-        <the-page-title-block v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'page-title'" :index='index' />
-        <the-notes-container v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Note'" :index='index' />
-        <the-warning-card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Warning'" :index='index' />
-        <the-info-card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Info'" :index='index' />
-        <the-divider-component v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Divider'" :index='index' />
-        <the-code-block v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code Block'" :index='index' />
-        <admin-codeblock-with-response v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code & Res'" :index='index' />
-        <the-card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Card'" :index='index' />
-        <admin-code-block-with-tabs v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code Table'" :index='index' />
+        <the-page-title-block v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'page-title'" :index='index' @update-edit="updateEdit" />
+        <the-notes-container v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Note'" :index='index' @update-edit="updateEdit" />
+        <the-warning-card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Warning'" :index='index' @update-edit="updateEdit" />
+        <the-info-card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Info'" :index='index' @update-edit="updateEdit" />
+        <the-divider-component v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Divider'" :index='index' @update-edit="updateEdit" />
+        <the-code-block v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code Block'" :index='index' @update-edit="updateEdit" />
+        <admin-codeblock-with-response v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code & Res'" :index='index' @update-edit="updateEdit" />
+        <the-card v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Card'" :index='index' @update-edit="updateEdit" />
+        <admin-code-block-with-tabs v-show="blockDisplayed.replace(/\s([^a-z])$/, '') == 'Code Table'" :index='index' @update-edit="updateEdit" />
+        <div class="help-btns">
+            <div class="edit">
+                <img :src="require(`~/assets/images/edit.svg`)" alt="edit">
+            </div>
+            <div class="copy">
+                <img :src="require(`~/assets/images/copy.svg`)" alt="copy">
+            </div>
+            <div class="delete">
+                <img :src="require(`~/assets/images/delete.svg`)" alt="delete">
+            </div>
+        </div>
     </div>
 </template>
 
@@ -31,7 +43,7 @@ import TheNotesContainer from './TheNotesContainer.vue';
 import ThePageTitleBlock from './ThePageTitleBlock.vue'
 import TheWarningCard from './TheWarningCard.vue';
 export default {
-    components: { ThePageTitleBlock, TheNormalText, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock, TheCodeBlockWithResponse, AdminCodeblockWithResponse, TheCard, AdminCodeBlockWithTabs },
+    components: { ThePageTitleBlock, TheNormalText, TheNotesContainer, TheWarningCard, TheInfoCard, TheDividerComponent, TheCodeBlock, AdminCodeblockWithResponse, TheCard, AdminCodeBlockWithTabs },
     props:{
         blockType:{
             type: String,
@@ -53,7 +65,8 @@ export default {
     data(){
         return{
             showModal: false,
-            blockDisplayed: `Text ${this.index}`
+            blockDisplayed: `Text ${this.index}`,
+            editing: false, 
         }  
     },
     mounted(){
@@ -63,6 +76,9 @@ export default {
         // window.localStorage.removeItem('vuex');
     },
     methods:{
+        updateEdit(editState){
+            this.editing = editState
+        },
         // Event handler for the enter button
         enterPressed(){
             this.$emit('enter-pressed');
@@ -85,7 +101,11 @@ export default {
         },
         updateIndex(){
             this.$emit('update-block-index', this.index);
-        }
+        },
+        async onEditBlock(block){
+            let reqArray = await this.$axios.put(`/page_section/${block.id}`, block.payload)
+            console.log(reqArray, block.payload);
+        },
     },
 }
 </script>
@@ -94,5 +114,24 @@ export default {
 .reusable-block-container{
     position: relative;
     margin-top: 10px;
+    .help-btns{
+        display: none;
+    }
+}
+.active{
+    padding: 16px 29.4px;
+    border: 2px dashed #EFEFEF;
+    border-radius: 5px;
+    position: relative;
+    .help-btns{
+        position: absolute;
+        bottom: -12px;
+        right: 10px;
+        display: flex;
+        gap: 26px;
+        img{
+            cursor: pointer;
+        }
+    }
 }
 </style>
